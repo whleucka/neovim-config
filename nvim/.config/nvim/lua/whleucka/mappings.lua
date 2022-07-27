@@ -4,13 +4,15 @@ local inoremap = require("whleucka.remap").inoremap
 -- Quick save / exit
 nnoremap("<leader>w", ":update!<CR>")
 nnoremap("<leader>q", ":qall<CR>")
-nnoremap("<leader>c", ":bd<CR>")
+nnoremap("<leader>c", ":BufferDelete<CR>")
+nnoremap("<leader>R", ":LspRestart<CR>")
+nnoremap("<leader>S", ":so<CR>")
 
 -- Packer
 nnoremap("<leader>ps", ":PackerSync<CR>")
 
 -- Diagnostics
-nnoremap("<leader>t", ":TroubleToggle<CR>")
+nnoremap("<leader>t", ":TroubleToggle document_diagnostics<CR>")
 
 -- File navigation
 nnoremap("<leader>e", ":NvimTreeToggle<CR>")

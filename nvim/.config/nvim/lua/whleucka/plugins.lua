@@ -27,7 +27,7 @@ vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 return packer.startup(function(use)
     -- My custom plugins
-    
+
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
 
@@ -44,25 +44,25 @@ return packer.startup(function(use)
 
     -- LSP
     use {
-      'VonHeikemen/lsp-zero.nvim',
-      requires = {
-        -- LSP Support
-        {'neovim/nvim-lspconfig'},
-        {'williamboman/mason.nvim'},
-        {'williamboman/mason-lspconfig.nvim'},
+        'VonHeikemen/lsp-zero.nvim',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},
-        {'hrsh7th/cmp-buffer'},
-        {'hrsh7th/cmp-path'},
-        {'saadparwaiz1/cmp_luasnip'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'hrsh7th/cmp-nvim-lua'},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
 
-        -- Snippets
-        {'L3MON4D3/LuaSnip'},
-        {'rafamadriz/friendly-snippets'},
-      }
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
     }
 
     -- Telescope (pickers)
@@ -91,7 +91,7 @@ return packer.startup(function(use)
     -- Treesitter (syntax)
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = function() 
+        run = function()
             require('nvim-treesitter.install').update({ with_sync = true })
         end,
     }
@@ -99,7 +99,10 @@ return packer.startup(function(use)
     -- Error / Diagnostic Messages
     use {
         "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
+        requires = {
+            "folke/lsp-colors.nvim",
+            "kyazdani42/nvim-web-devicons"
+        },
         config = function()
             require("trouble").setup()
         end
@@ -108,7 +111,7 @@ return packer.startup(function(use)
     -- Tabline (buffers)
     use {
         'romgrk/barbar.nvim',
-        requires = {'kyazdani42/nvim-web-devicons'}
+        requires = "kyazdani42/nvim-web-devicons"
     }
 
     -- Lualine status
@@ -122,6 +125,13 @@ return packer.startup(function(use)
             }
         end,
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
+    -- Tpope plugins
+    use {
+        "tpope/vim-surround",
+        "tpope/vim-fugitive",
+        "tpope/vim-repeat",
     }
 
     -- Automatically set up the configuration after cloning packer.nvim

@@ -11,11 +11,15 @@ vim.opt.mouse = "a"
 -- Cursor
 vim.opt.guicursor = ""
 
--- Spaces & Tabs
+-- Indentation & Spaces & Tabs & Splits
+vim.opt.smartindent = true
+vim.opt.autoindent = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Saving/Swap
 vim.opt.swapfile = false
@@ -26,10 +30,6 @@ vim.opt.undofile = true
 -- Searching
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-
--- Indenting
-vim.opt.smartindent = true
-vim.opt.autoindent = true
 
 -- Colours
 vim.opt.termguicolors = true
