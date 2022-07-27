@@ -26,6 +26,7 @@ vim.opt.incsearch = true
 
 -- Indenting
 vim.opt.smartindent = true
+vim.opt.autoindent = true
 
 -- Colours
 vim.opt.termguicolors = true
