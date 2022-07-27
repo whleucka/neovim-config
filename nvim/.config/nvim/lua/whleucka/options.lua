@@ -5,6 +5,9 @@ vim.g.mapleader = " "
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Mouse?
+vim.opt.mouse = "a"
+
 -- Cursor
 vim.opt.guicursor = ""
 
