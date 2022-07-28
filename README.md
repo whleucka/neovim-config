@@ -12,7 +12,7 @@ stow nvim
 stow -D nvim
 ```
         
-### Thanks
+### Acknowledgments
 A special thank you to <a href='https://github.com/theprimeagen'>Prime</a> and <a href='https://github.com/tjdevries'>TJ</a> (and others) for making amazing Neovim content. I truly love this community.
 
 <p float="left">
