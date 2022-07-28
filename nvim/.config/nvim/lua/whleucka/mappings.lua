@@ -9,6 +9,11 @@ nnoremap("<leader>R", ":LspRestart<CR>")
 nnoremap("<leader>S", ":so<CR>")
 nnoremap("<ESC>", ":noh<CR>")
 
+-- Terminal
+nnoremap("<C-\\>", ":ToggleTerm direction=float<CR>")
+nnoremap("<leader>tb", "<cmd> lua require('whleucka.terminal').bpytop_toggle()<CR>")
+nnoremap("<leader>th", "<cmd> lua require('whleucka.terminal').htop_toggle()<CR>")
+
 -- Packer
 nnoremap("<leader>ps", ":PackerSync<CR>")
 
@@ -17,9 +22,6 @@ nnoremap("<leader>t", ":TroubleToggle document_diagnostics<CR>")
 
 -- Fugitive
 nnoremap("<leader>gs", ":Git<CR>")
-
--- Terminal
-nnoremap("<C-\\>", ":ToggleTerm direction=float<CR>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
