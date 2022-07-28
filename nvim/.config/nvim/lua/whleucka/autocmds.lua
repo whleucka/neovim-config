@@ -40,3 +40,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     pattern = '*',
     command = [[silent! lua vim.highlight.on_yank() {higroup="IncSearch", timeout=400}]]
 })
+
+-- Folds
+--vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
+--    pattern = '*',
+--    command = "normal zR"
+--})
