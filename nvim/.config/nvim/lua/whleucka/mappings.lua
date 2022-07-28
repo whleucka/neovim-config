@@ -15,8 +15,9 @@ nnoremap("<leader>ps", ":PackerSync<CR>")
 -- Diagnostics
 nnoremap("<leader>t", ":TroubleToggle document_diagnostics<CR>")
 
--- File navigation
-nnoremap("<leader>e", ":NvimTreeToggle<CR>")
+-- Fugitive
+nnoremap("<leader>gs", ":Git<CR>")
+
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
@@ -31,6 +32,9 @@ nnoremap("<leader>I", ":Mason<CR>")
 -- Exit insert
 inoremap("jk", "<ESC>");
 inoremap("kj", "<ESC>");
+
+-- File navigation
+nnoremap("<leader>e", ":NvimTreeToggle<CR>")
 
 -- Split navigation
 nnoremap("<leader>h", "<C-w><C-h>")
