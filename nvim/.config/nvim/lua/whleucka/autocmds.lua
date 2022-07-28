@@ -52,6 +52,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     command = [[silent! lua vim.highlight.on_yank() {higroup="IncSearch", timeout=400}]]
 })
 
+-- Will work in v0.8.0
+--local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
+--vim.api.nvim_create_autocmd("LspAttach", {
+--    group = lsp,
+--    callback = function()
+--        print("With great power comes great responsibility")
+--    end,
+--})
+
 -- Folds
 --local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
 --vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {

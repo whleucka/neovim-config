@@ -1,11 +1,14 @@
 -- Leade/Globals
 vim.g.mapleader = " "
 
+-- Encoding
+vim.opt.encoding = "utf-8"
+
 -- Line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
--- Mouse?
+-- Mouse? Sure, why not
 vim.opt.mouse = "a"
 
 -- Cursor
@@ -24,10 +27,11 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Folds
---vim.wo.foldmethod = "expr"
---vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
---vim.wo.foldnestmax = 3
---vim.wo.foldminlines = 1
+vim.wo.foldenable = false
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldnestmax = 3
+vim.wo.foldminlines = 1
 
 -- Saving/Swap
 vim.opt.swapfile = false
@@ -39,9 +43,13 @@ vim.opt.undofile = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.smartcase = true
+vim.opt.showmatch = true
 
--- Colours
+-- Colours / Display
 vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
+vim.opt.hidden = true
+vim.opt.completeopt = { "menu" , "menuone" , "noselect", "noinsert" }
 
 -- Command height
 vim.opt.cmdheight = 1
