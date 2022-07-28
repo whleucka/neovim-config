@@ -14,4 +14,4 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Load the colorscheme
 vim.cmd[[colorscheme tokyonight]]
---vim.cmd[[hi BufferTabpageFill guibg=NONE]]
+vim.cmd[[hi BufferTabpageFill guibg=NONE]]
