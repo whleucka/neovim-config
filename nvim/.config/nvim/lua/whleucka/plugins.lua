@@ -42,6 +42,14 @@ return packer.startup(function(use)
         end
     }
 
+    -- Notifications
+    use {
+        "rcarriga/nvim-notify",
+        config = function()
+            vim.notify = require("notify")
+        end
+    }
+
     -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -63,6 +71,14 @@ return packer.startup(function(use)
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
+    }
+
+    -- Terminal
+    use {
+        "akinsho/toggleterm.nvim", tag = 'v2.*',
+        config = function()
+            require("toggleterm").setup()
+        end
     }
 
     -- Telescope (pickers)

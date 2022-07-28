@@ -18,6 +18,8 @@ nnoremap("<leader>t", ":TroubleToggle document_diagnostics<CR>")
 -- Fugitive
 nnoremap("<leader>gs", ":Git<CR>")
 
+-- Terminal
+nnoremap("<C-\\>", ":ToggleTerm direction=float<CR>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
