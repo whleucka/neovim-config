@@ -1,6 +1,5 @@
 local nnoremap = require("whleucka.remap").nnoremap
 local inoremap = require("whleucka.remap").inoremap
-local bitcoin_price = require("whleucka.functions").bitcoin_price
 
 -- Quick save / exit
 nnoremap("<leader>w", "<cmd> update<CR>")
@@ -9,7 +8,7 @@ nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
 nnoremap("<leader>R", "<cmd> LspRestart<CR>")
 nnoremap("<leader>S", "<cmd> so<CR>")
-nnoremap("<leader>b", "<cmd> lua bitcoin_price()<CR>")
+nnoremap("<leader>b", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
 nnoremap("<ESC>", "<cmd> noh<CR>")
 
 -- Terminal
