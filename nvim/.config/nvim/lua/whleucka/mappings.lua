@@ -5,6 +5,7 @@ local inoremap = require("whleucka.remap").inoremap
 nnoremap("<leader>w", ":update<CR>")
 nnoremap("<leader>q", ":q<CR>")
 nnoremap("<leader>c", ":BufferDelete<CR>")
+nnoremap("<leader>f", ":LspZeroFormat<CR>")
 nnoremap("<leader>R", ":LspRestart<CR>")
 nnoremap("<leader>S", ":so<CR>")
 nnoremap("<ESC>", ":noh<CR>")
