@@ -5,14 +5,9 @@ function M.bitcoin_price()
         stdout_buffered = true,
         on_stdout = function(_, data)
             if data then
-                for _,line in ipairs(data) do
-                    if line ~= nil then
-                        vim.notify(line, "SUCCESS", {
-                            title = "Current Bitcoin USD"
-                        })
-                    end
-                    break
-                end
+                vim.notify(data, "SUCCESS", {
+                    title = "Current Bitcoin USD"
+                })
             end
         end
     })
