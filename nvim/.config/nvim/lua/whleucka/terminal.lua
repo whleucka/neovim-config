@@ -1,6 +1,7 @@
 local M = {}
 
 local Terminal  = require('toggleterm.terminal').Terminal
+-- System monitors
 local bpytop = Terminal:new({ cmd = "bpytop", hidden = true, direction = "float" })
 local htop = Terminal:new({ cmd = "htop", hidden = true, direction = "float" })
 

@@ -1,4 +1,4 @@
--- Nvim Tree fixes
+-- Nvim Tree position fixes
 vim.api.nvim_create_autocmd('BufWinEnter', {
     pattern = '*',
     callback = function()
@@ -17,33 +17,25 @@ vim.api.nvim_create_autocmd('BufWinLeave', {
     end
 })
 
--- Restore last cursor position
 local save_pos = vim.api.nvim_create_augroup("SaveIt", {clear = true})
 vim.api.nvim_create_autocmd("BufRead", {
+    desc = "Restore last cursor position",
     group = save_pos,
     pattern = '*',
     command = [[call setpos(".", getpos("'\""))]]
 })
 
--- Auto save plugins
-local packer_sync = vim.api.nvim_create_augroup("PackerSyncIt", {clear = true})
-vim.api.nvim_create_autocmd("BufWritePost", {
-    group = packer_sync,
-    pattern = 'plugins.lua',
-    command = "source <afile> | PackerSync"
-})
-
--- Set cursor position on exit
-local leave = vim.api.nvim_create_augroup("Leave", {clear = true})
+local leave = vim.api.nvim_create_augroup("LeaveIt", {clear = true})
 vim.api.nvim_create_autocmd("VimLeave", {
+    desc = "Set cursor position on exit",
     group = leave,
     pattern = '*',
     command = "wshada!"
 })
 
--- Hightlight text on yank
-local yank = vim.api.nvim_create_augroup("YankThat", {clear = true})
+local yank = vim.api.nvim_create_augroup("YankIt", {clear = true})
 vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Hightlight text on yank",
     group = yank,
     pattern = '*',
     command = [[silent! lua vim.highlight.on_yank() {higroup="IncSearch", timeout=400}]]
@@ -103,16 +95,16 @@ vim.api.nvim_create_autocmd({'UIEnter'}, {
 -- Will work in v0.8.0
 --local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
 --vim.api.nvim_create_autocmd("LspAttach", {
---    group = lsp,
---    callback = function()
---        print("With great power comes great responsibility")
---    end,
---})
+    --    group = lsp,
+    --    callback = function()
+        --        print("With great power comes great responsibility")
+        --    end,
+        --})
 
--- Folds
---local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
---vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
---    group = folds,
---    pattern = '*',
---    command = "normal zR"
---})
+        -- Folds
+        --local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
+        --vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
+            --    group = folds,
+            --    pattern = '*',
+            --    command = "normal zR"
+            --})

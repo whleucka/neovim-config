@@ -25,7 +25,7 @@ end
 
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
-return packer.startup(function(use)
+return packer.startup({function(use)
     -- My custom plugins
 
     -- Packer can manage itself
@@ -168,4 +168,12 @@ return packer.startup(function(use)
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
-end)
+end,
+config = {
+    display = {
+        open_fn = function()
+            -- Open in a floating window
+            return require('packer.util').float({ border = 'single' })
+        end
+    }
+}})
