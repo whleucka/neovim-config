@@ -1,3 +1,4 @@
+require("impatient").enable_profile()
 require("whleucka.plugins")
 require("whleucka.options")
 require("whleucka.mappings")
