@@ -1,4 +1,3 @@
-local notify = require 'notify'
 vim.lsp.handlers['window/showMessage'] = function(_, result, ctx)
     local client = vim.lsp.get_client_by_id(ctx.client_id)
     local lvl = ({
@@ -7,7 +6,7 @@ vim.lsp.handlers['window/showMessage'] = function(_, result, ctx)
         'INFO',
         'DEBUG',
     })[result.type]
-    notify({ result.message }, lvl, {
+    vim.notify({ result.message }, lvl, {
         title = 'LSP | ' .. client.name,
         timeout = 6000,
         keep = function()

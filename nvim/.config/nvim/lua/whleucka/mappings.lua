@@ -1,28 +1,32 @@
 local nnoremap = require("whleucka.remap").nnoremap
 local inoremap = require("whleucka.remap").inoremap
+local bitcoin_price = require("whleucka.functions").bitcoin_price
 
 -- Quick save / exit
-nnoremap("<leader>w", ":update<CR>")
-nnoremap("<leader>q", ":q<CR>")
-nnoremap("<leader>c", ":BufferDelete<CR>")
-nnoremap("<leader>f", ":LspZeroFormat<CR>")
-nnoremap("<leader>R", ":LspRestart<CR>")
-nnoremap("<leader>S", ":so<CR>")
-nnoremap("<ESC>", ":noh<CR>")
+nnoremap("<leader>w", "<cmd> update<CR>")
+nnoremap("<leader>q", "<cmd> q<CR>")
+nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
+nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
+nnoremap("<leader>R", "<cmd> LspRestart<CR>")
+nnoremap("<leader>S", "<cmd> so<CR>")
+nnoremap("<leader>b", "<cmd> lua bitcoin_price()<CR>")
+nnoremap("<ESC>", "<cmd> noh<CR>")
 
 -- Terminal
-nnoremap("<C-\\>", ":ToggleTerm direction=float<CR>")
+nnoremap("<C-\\>", "<cmd> ToggleTerm direction=float<CR>")
+nnoremap("<leader>t", "<cmd> ToggleTerm<CR>")
 nnoremap("<leader>tb", "<cmd> lua require('whleucka.terminal').bpytop_toggle()<CR>")
 nnoremap("<leader>th", "<cmd> lua require('whleucka.terminal').htop_toggle()<CR>")
+nnoremap("<leader>tm", "<cmd> lua require('whleucka.terminal').matrix_toggle()<CR>")
 
 -- Packer
-nnoremap("<leader>ps", ":PackerSync<CR>")
+nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
 
 -- Diagnostics
-nnoremap("<leader>t", ":TroubleToggle document_diagnostics<CR>")
+nnoremap("<leader>T", "<cmd> TroubleToggle document_diagnostics<CR>")
 
 -- Fugitive
-nnoremap("<leader>gs", ":Git<CR>")
+nnoremap("<leader>gs", "<cmd> Git<CR>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
@@ -32,14 +36,14 @@ nnoremap("<leader>fo", "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
 nnoremap("<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 
 -- Mason
-nnoremap("<leader>I", ":Mason<CR>")
+nnoremap("<leader>I", "<cmd> Mason<CR>")
 
 -- Exit insert
 inoremap("jk", "<ESC>");
 inoremap("kj", "<ESC>");
 
 -- File navigation
-nnoremap("<leader>e", ":NvimTreeToggle<CR>")
+nnoremap("<leader>e", "<cmd> NvimTreeToggle<CR>")
 
 -- Split navigation
 nnoremap("<leader>h", "<C-w><C-h>")
@@ -49,5 +53,5 @@ nnoremap("<leader>l", "<C-w><C-l>")
 nnoremap("<leader><leader>", "<C-w><C-p>")
 
 -- Tabs
-nnoremap("H", ":BufferPrev<CR>")
-nnoremap("L", ":BufferNext<CR>")
+nnoremap("H", "<cmd> BufferPrev<CR>")
+nnoremap("L", "<cmd> BufferNext<CR>")
