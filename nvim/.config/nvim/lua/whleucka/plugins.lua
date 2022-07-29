@@ -25,7 +25,7 @@ end
 
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
-return packer.startup({function(use)
+return packer.startup({ function(use)
     -- My custom plugins
 
     -- Packer can manage itself
@@ -34,7 +34,7 @@ return packer.startup({function(use)
     -- Theme
     use "folke/tokyonight.nvim"
 
-    -- Git signs 
+    -- Git signs
     use {
         'lewis6991/gitsigns.nvim',
         config = function()
@@ -55,21 +55,21 @@ return packer.startup({function(use)
         'VonHeikemen/lsp-zero.nvim',
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
         }
     }
 
@@ -84,7 +84,7 @@ return packer.startup({function(use)
     -- Telescope (pickers)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use {
         'nvim-telescope/telescope-fzf-native.nvim',
@@ -129,11 +129,11 @@ return packer.startup({function(use)
         'gelguy/wilder.nvim',
         config = function()
             local wilder = require('wilder')
-            wilder.setup({modes = {':', '/', '?'}})
+            wilder.setup({ modes = { ':', '/', '?' } })
             wilder.set_option('renderer', wilder.popupmenu_renderer({
                 highlighter = wilder.basic_highlighter(),
-                left = {' ', wilder.popupmenu_devicons()},
-                right = {' ', wilder.popupmenu_scrollbar()},
+                left = { ' ', wilder.popupmenu_devicons() },
+                right = { ' ', wilder.popupmenu_scrollbar() },
             }))
         end,
     }
@@ -148,7 +148,7 @@ return packer.startup({function(use)
     use {
         'nvim-lualine/lualine.nvim',
         config = function()
-            require('lualine').setup{
+            require('lualine').setup {
                 options = {
                     theme = 'tokyonight'
                 }
@@ -169,11 +169,11 @@ return packer.startup({function(use)
         require("packer").sync()
     end
 end,
-config = {
-    display = {
-        open_fn = function()
-            -- Open in a floating window
-            return require('packer.util').float({ border = 'single' })
-        end
-    }
-}})
+    config = {
+        display = {
+            open_fn = function()
+                -- Open in a floating window
+                return require('packer.util').float({ border = 'single' })
+            end
+        }
+    } })

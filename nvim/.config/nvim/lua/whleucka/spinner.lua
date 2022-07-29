@@ -62,7 +62,7 @@ function Spinner:_spin()
     self.opts = nil
 
     self.timer = vim.loop.new_timer()
-    self.timer:start(1000/#spinner_frames, 0, vim.schedule_wrap(function()
+    self.timer:start(1000 / #spinner_frames, 0, vim.schedule_wrap(function()
         self:_spin()
     end))
 end
