@@ -76,6 +76,18 @@ return packer.startup({function(use)
         }
     }
 
+    -- Rust tools
+    use {
+        'simrat39/rust-tools.nvim',
+        requires = {
+            {'nvim-lua/plenary.nvim'},
+            {'mfussenegger/nvim-dap'}
+        },
+        config = function()
+            require('rust-tools').setup({})
+        end
+    }
+
     -- Terminal
     use {
         "akinsho/toggleterm.nvim", tag = 'v2.*',
