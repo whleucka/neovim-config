@@ -84,10 +84,23 @@ return packer.startup({function(use)
         end
     }
 
+    -- Rust
+    use {
+        'simrat39/rust-tools.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'mfussenegger/nvim-dap'
+        },
+        config = function ()
+            require('rust-tools').setup({})
+            require('rust-tools.runnables').runnables()
+        end
+    }
+
     -- Telescope (pickers)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { 'nvim-lua/plenary.nvim' }
     }
     use {
         'nvim-telescope/telescope-fzf-native.nvim',
