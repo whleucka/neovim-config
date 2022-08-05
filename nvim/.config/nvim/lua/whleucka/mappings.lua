@@ -6,10 +6,11 @@ nnoremap("<leader>w", "<cmd> update<CR>")
 nnoremap("<leader>q", "<cmd> q<CR>")
 nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
-nnoremap("<leader>R", "<cmd> LspRestart<CR>")
-nnoremap("<leader>S", "<cmd> so<CR>")
+nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 nnoremap("<leader>b", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
 nnoremap("<ESC>", "<cmd> noh<CR>")
+
+nnoremap("<leader>ca", "<cmd> lua vim.lsp.buf.code_action()<CR>")
 
 -- Terminal
 nnoremap("<C-\\>", "<cmd> ToggleTerm direction=float<CR>")
