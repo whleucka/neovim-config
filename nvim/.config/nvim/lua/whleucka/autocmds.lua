@@ -50,11 +50,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Git
-local group = vim.api.nvim_create_augroup('MyCustomNeogitEvents', { clear = true })
+local git_group = vim.api.nvim_create_augroup('MyCustomNeogitEvents', { clear = true })
 vim.api.nvim_create_autocmd('User', {
   pattern = 'NeogitPushComplete',
-  group = group,
+  group = git_group,
   callback = require('neogit').close,
+})
+vim.api.nvim_create_autocmd('BufWritePost,BufEnter,FocusGained,ShellCmdPost,VimResume', {
+  pattern = '*',
+  group = git_group,
+  callback = require('neogit').refresh_manually(),
 })
 
 -- Integrate lsp progress with nvim-notify
