@@ -49,6 +49,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     command = [[silent! lua vim.highlight.on_yank() {higroup="IncSearch", timeout=400}]]
 })
 
+-- Git
+local group = vim.api.nvim_create_augroup('MyCustomNeogitEvents', { clear = true })
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'NeogitPushComplete',
+  group = group,
+  callback = require('neogit').close,
+})
+
 -- Integrate lsp progress with nvim-notify
 --vim.api.nvim_create_autocmd({'UIEnter'}, {
 --    once = true,
