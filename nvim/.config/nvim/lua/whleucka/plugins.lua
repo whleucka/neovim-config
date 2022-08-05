@@ -168,10 +168,17 @@ return packer.startup({function(use)
         }
     }
 
+    -- Git
+    use { 'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+        require('neogit').setup{}
+    end
+}
+
     -- Tpope plugins
     use {
         "tpope/vim-surround",
-        "tpope/vim-fugitive",
         "tpope/vim-repeat",
     }
 

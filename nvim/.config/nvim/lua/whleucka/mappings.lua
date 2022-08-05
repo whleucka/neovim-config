@@ -28,8 +28,8 @@ nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
 -- Diagnostics
 nnoremap("<leader>T", "<cmd> TroubleToggle document_diagnostics<CR>")
 
--- Fugitive
-nnoremap("<leader>gs", "<cmd> Git<CR>")
+-- Git
+nnoremap("<leader>gs", "<cmd> Neogit<CR>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
