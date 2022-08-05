@@ -78,6 +78,8 @@ nnoremap("<A-Right>", ":vertical resize -2<CR>")
 -- Line movements
 nnoremap("H", "^")
 nnoremap("L", "$")
+nnoremap("j", "gj")
+nnoremap("k", "gk")
 
 -- Stay in indent mode
 vnoremap("<", "<gv")
@@ -102,8 +104,6 @@ nnoremap("<leader>y", 'gg"+yG')
 xnoremap("<leader>p", '"_dP')
 nnoremap("<leader>d", '"_d')
 vnoremap("<leader>d", '"_d')
-
--- Clipboard
 
 -- Tabs
 nnoremap("<M-,>", "<cmd> BufferPrev<CR>")
