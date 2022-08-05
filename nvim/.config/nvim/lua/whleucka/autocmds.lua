@@ -49,7 +49,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     command = [[silent! lua vim.highlight.on_yank() {higroup="IncSearch", timeout=400}]]
 })
 
--- Git
 local close_git = vim.api.nvim_create_augroup('CloseNeogit', { clear = true })
 vim.api.nvim_create_autocmd('User', {
   desc = "Close neogit on push complete",
