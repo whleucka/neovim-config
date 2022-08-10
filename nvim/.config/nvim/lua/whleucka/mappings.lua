@@ -81,10 +81,10 @@ nnoremap("<leader>l", "<C-w><C-l>")
 nnoremap("<leader><leader>", "<C-w><C-p>")
 
 -- Resize splits
-nnoremap("<A-Up>", ":resize +2<CR>")
-nnoremap("<A-Down>", ":resize -2<CR>")
-nnoremap("<A-Left>", ":vertical resize +2<CR>")
-nnoremap("<A-Right>", ":vertical resize -2<CR>")
+nnoremap("<Up>", ":resize +2<CR>")
+nnoremap("<Down>", ":resize -2<CR>")
+nnoremap("<Left>", ":vertical resize +2<CR>")
+nnoremap("<Right>", ":vertical resize -2<CR>")
 
 -- Line movements
 nnoremap("H", "^")
