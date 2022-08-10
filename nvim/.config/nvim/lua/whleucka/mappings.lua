@@ -13,6 +13,7 @@ nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
 nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 nnoremap("<leader>b", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
+nnoremap("q", "<nop>")
 nnoremap("<ESC>", "<cmd> noh<CR>")
 
 -- LSP
