@@ -2,6 +2,8 @@ local nnoremap = require("whleucka.remap").nnoremap
 local inoremap = require("whleucka.remap").inoremap
 local xnoremap = require("whleucka.remap").xnoremap
 local vnoremap = require("whleucka.remap").vnoremap
+local tmap = require("whleucka.remap").tmap
+local nmap = require("whleucka.remap").nmap
 
 -- Quick save / exit
 nnoremap("<leader>le", ":Lex 50<CR>")
@@ -13,14 +15,22 @@ nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 nnoremap("<leader>b", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
 nnoremap("<ESC>", "<cmd> noh<CR>")
 
+-- LSP
 nnoremap("<leader>ca", "<cmd> lua vim.lsp.buf.code_action()<CR>")
+nnoremap("<leader>rn", "<cmd> lua vim.lsp.buf.rename()<CR>")
 
 -- Terminal
-nnoremap("<C-\\>", "<cmd> ToggleTerm direction=float<CR>")
-nnoremap("<leader>t", "<cmd> ToggleTerm<CR>")
+nnoremap([[<C-\>]], "<cmd> ToggleTerm direction=float<CR>")
+nnoremap("<leader>th", "<cmd> ToggleTerm direction=horizontal size=15<CR>")
+nnoremap("<leader>tv", "<cmd> ToggleTerm direction=vertical size=60<CR>")
 nnoremap("<leader>tb", "<cmd> lua require('whleucka.terminal').bpytop_toggle()<CR>")
-nnoremap("<leader>th", "<cmd> lua require('whleucka.terminal').htop_toggle()<CR>")
+nnoremap("<leader>tt", "<cmd> lua require('whleucka.terminal').htop_toggle()<CR>")
 nnoremap("<leader>tm", "<cmd> lua require('whleucka.terminal').matrix_toggle()<CR>")
+function _G.set_terminal_keymaps()
+    tmap("<esc>", "<cmd> ToggleTermToggleAll<CR>")
+    tmap("jk", [[<C-\><C-n>]])
+    tmap("kj", [[<C-\><C-n>]])
+end
 
 -- Packer
 nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
