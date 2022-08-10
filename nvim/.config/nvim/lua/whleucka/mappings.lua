@@ -6,7 +6,7 @@ local tmap = require("whleucka.remap").tmap
 local nmap = require("whleucka.remap").nmap
 
 -- Quick save / exit
-nnoremap("<leader>le", ":Lex 50<CR>")
+nnoremap("<leader>le", ":Lex 40<CR>")
 nnoremap("<leader>w", "<cmd> update<CR>")
 nnoremap("<leader>q", "<cmd> q<CR>")
 nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
