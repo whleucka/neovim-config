@@ -1,3 +1,4 @@
+---@diagnostic disable: need-check-nil
 local nnoremap = require("whleucka.remap").nnoremap
 local inoremap = require("whleucka.remap").inoremap
 local xnoremap = require("whleucka.remap").xnoremap
@@ -12,13 +13,25 @@ nnoremap("<leader>q", "<cmd> q<CR>")
 nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
 nnoremap("<leader>r", "<cmd> LspRestart<CR>")
-nnoremap("<leader>b", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
+nnoremap("<leader>B", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
 nnoremap("q", "<nop>")
 nnoremap("<ESC>", "<cmd> noh<CR>")
 
 -- LSP
 nnoremap("<leader>ca", "<cmd> lua vim.lsp.buf.code_action()<CR>")
 nnoremap("<leader>rn", "<cmd> lua vim.lsp.buf.rename()<CR>")
+
+-- DAP
+nnoremap("<leader>dt", "<cmd>lua require'dapui'.toggle()<CR>")
+nnoremap("<C-s>", "<cmd>lua require'dap'.continue()<CR>")
+nnoremap("<F9>", "<cmd>lua require'dap'.step_over()<CR>")
+nnoremap("<F10>", "<cmd>lua require'dap'.step_into()<CR>")
+nnoremap("<F11>", "<cmd>lua require'dap'.step_out()<CR>")
+nnoremap("<F12>", "<cmd> DapTerminate<CR>")
+nnoremap("<leader>;", "<cmd>lua require'dap.ui.widgets'.hover()<CR>")
+nnoremap("<leader>df", "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>")
+nnoremap("bp", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
+nnoremap("<leader>dc", "<cmd>lua require'telescope'.extensions.dap.commands{}<CR>")
 
 -- Terminal
 nnoremap([[<C-\>]], "<cmd> ToggleTerm direction=float<CR>")
@@ -117,8 +130,8 @@ nnoremap("<leader>d", '"_d')
 vnoremap("<leader>d", '"_d')
 
 -- Tabs
-nnoremap("<M-,>", "<cmd> BufferPrev<CR>")
-nnoremap("<M-.>", "<cmd> BufferNext<CR>")
+nnoremap("<", "<cmd> BufferPrev<CR>")
+nnoremap(">", "<cmd> BufferNext<CR>")
 
 -- Quickfix lists
 nnoremap("[q", ":cprevious<CR>")

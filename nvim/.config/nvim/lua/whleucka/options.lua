@@ -1,5 +1,7 @@
 -- Leade/Globals
 vim.g.mapleader = " "
+-- DAP
+vim.g.dap_virtual_text = true
 
 -- Encoding
 vim.opt.encoding = "utf-8"
