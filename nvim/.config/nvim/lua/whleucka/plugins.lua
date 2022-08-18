@@ -107,6 +107,17 @@ return packer.startup({function(use)
         run = 'make'
     }
 
+    -- View images as ascii
+    use {
+        'samodostal/image.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        },
+        config = function()
+            require("whleucka.image")
+        end
+    }
+
     -- Nvim Tree (file navigation)
     use {
         'kyazdani42/nvim-tree.lua',
