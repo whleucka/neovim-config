@@ -23,8 +23,6 @@ if not status_ok then
     return
 end
 
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
 return packer.startup({function(use)
     -- My custom plugins
 
@@ -74,7 +72,7 @@ return packer.startup({function(use)
                 {'theHamsta/nvim-dap-virtual-text'}
             },
             config = function()
-                require("dapui").setup{}
+                -- require("dapui").setup{}
                 require("dap-python").setup('/usr/bin/python')
                 vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
                 local dap = require('dap')
@@ -84,30 +82,30 @@ return packer.startup({function(use)
                     name = 'lldb'
                 }
                 dap.configurations.cpp = {
-                  {
-                    name = 'Launch',
-                    type = 'lldb',
-                    request = 'launch',
-                    program = function()
-                      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                    end,
-                    cwd = '${workspaceFolder}',
-                    stopOnEntry = false,
-                    args = {},
+                    {
+                        name = 'Launch',
+                        type = 'lldb',
+                        request = 'launch',
+                        program = function()
+                            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                        end,
+                        cwd = '${workspaceFolder}',
+                        stopOnEntry = false,
+                        args = {},
 
-                    -- 💀
-                    -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-                    --
-                    --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-                    --
-                    -- Otherwise you might get the following error:
-                    --
-                    --    Error on launch: Failed to attach to the target process
-                    --
-                    -- But you should be aware of the implications:
-                    -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-                    -- runInTerminal = false,
-                  },
+                        -- 💀
+                        -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
+                        --
+                        --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+                        --
+                        -- Otherwise you might get the following error:
+                        --
+                        --    Error on launch: Failed to attach to the target process
+                        --
+                        -- But you should be aware of the implications:
+                        -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
+                        -- runInTerminal = false,
+                    },
                 }
 
                 -- If you want to use this for Rust and C, add something like this:
@@ -149,7 +147,6 @@ return packer.startup({function(use)
         run = 'make'
     }
 
-
     -- Nvim Tree (file navigation)
     use {
         'kyazdani42/nvim-tree.lua',
@@ -158,7 +155,26 @@ return packer.startup({function(use)
         },
         tag = 'nightly',
         config = function()
-            require("nvim-tree").setup()
+            require("nvim-tree").setup({
+                sort_by = "case_sensitive",
+                view = {
+                    adaptive_size = true,
+                    mappings = {
+                        list = {
+                            { key = "u", action = "dir_up" },
+                        },
+                    },
+                },
+                renderer = {
+                    group_empty = true,
+                },
+                filters = {
+                    custom = { 
+                        "^.git$",
+                    },
+                    dotfiles = false,
+                },
+            })
         end
     }
 
