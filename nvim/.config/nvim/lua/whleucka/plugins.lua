@@ -72,48 +72,8 @@ return packer.startup({function(use)
                 {'theHamsta/nvim-dap-virtual-text'}
             },
             config = function()
-                -- require("dapui").setup{}
-                require("dap-python").setup('/usr/bin/python')
-                vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
-                local dap = require('dap')
-                dap.adapters.lldb = {
-                    type = 'executable',
-                    command = '/usr/bin/lldb-vscode', -- adjust as needed, must be absolute path
-                    name = 'lldb'
-                }
-                dap.configurations.cpp = {
-                    {
-                        name = 'Launch',
-                        type = 'lldb',
-                        request = 'launch',
-                        program = function()
-                            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                        end,
-                        cwd = '${workspaceFolder}',
-                        stopOnEntry = false,
-                        args = {},
-
-                        -- 💀
-                        -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-                        --
-                        --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-                        --
-                        -- Otherwise you might get the following error:
-                        --
-                        --    Error on launch: Failed to attach to the target process
-                        --
-                        -- But you should be aware of the implications:
-                        -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-                        -- runInTerminal = false,
-                    },
-                }
-
-                -- If you want to use this for Rust and C, add something like this:
-
-                dap.configurations.c = dap.configurations.cpp
-                dap.configurations.rust = dap.configurations.cpp
+                require("whleucka.dap")
             end },
-
 
             -- Autocompletion
             {'hrsh7th/nvim-cmp'},
@@ -155,26 +115,7 @@ return packer.startup({function(use)
         },
         tag = 'nightly',
         config = function()
-            require("nvim-tree").setup({
-                sort_by = "case_sensitive",
-                view = {
-                    adaptive_size = true,
-                    mappings = {
-                        list = {
-                            { key = "u", action = "dir_up" },
-                        },
-                    },
-                },
-                renderer = {
-                    group_empty = true,
-                },
-                filters = {
-                    custom = { 
-                        "^.git$",
-                    },
-                    dotfiles = false,
-                },
-            })
+            require("whleucka.tree")
         end
     }
 
@@ -202,13 +143,7 @@ return packer.startup({function(use)
     use {
         'gelguy/wilder.nvim',
         config = function()
-            local wilder = require('wilder')
-            wilder.setup({modes = {':', '/', '?'}})
-            wilder.set_option('renderer', wilder.popupmenu_renderer({
-                highlighter = wilder.basic_highlighter(),
-                left = {' ', wilder.popupmenu_devicons()},
-                right = {' ', wilder.popupmenu_scrollbar()},
-            }))
+            require("whleucka.wilder")
         end,
     }
 
@@ -222,16 +157,7 @@ return packer.startup({function(use)
     use {
         'nvim-lualine/lualine.nvim',
         config = function()
-            require('lualine').setup{
-                options = {
-                    theme = 'tokyonight'
-                },
-                sections = {
-                    lualine_c = {
-                        'lsp_progress',
-                    }
-                }
-            }
+            require("whleucka.lualine")
         end,
         requires = {
             'arkav/lualine-lsp-progress',
