@@ -100,22 +100,17 @@ return packer.startup({function(use)
     -- Telescope (pickers)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { 'nvim-lua/plenary.nvim' }
-    }
-    use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make'
-    }
-
-    -- View images as ascii
-    use {
-        'samodostal/image.nvim',
         requires = {
-            'nvim-lua/plenary.nvim'
+            { 'nvim-lua/plenary.nvim' },
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                run = 'make'
+            },
+            {
+                'nvim-lua/popup.nvim',
+                'nvim-telescope/telescope-media-files.nvim'
+            }
         },
-        config = function()
-            require("whleucka.image")
-        end
     }
 
     -- Nvim Tree (file navigation)

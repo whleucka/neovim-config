@@ -8,7 +8,7 @@ local nmap = require("whleucka.remap").nmap
 
 -- Quick save / exit
 nnoremap("<leader>le", ":Lex 40<CR>")
-nnoremap("<leader>w", "<cmd> update<CR>")
+nnoremap("<leader>w", "<cmd> update!<CR>")
 nnoremap("<leader>q", "<cmd> q<CR>")
 nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")

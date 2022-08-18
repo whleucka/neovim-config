@@ -6,6 +6,9 @@ lsp.preset('recommended')
 lsp.configure('sumneko_lua', {
     settings = {
         Lua = {
+            workspace = {
+                ignoreDir = { ".undodir" }
+            },
             diagnostics = {
                 globals = { 'vim' }
             }
