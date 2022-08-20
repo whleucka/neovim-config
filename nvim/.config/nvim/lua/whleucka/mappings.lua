@@ -4,7 +4,6 @@ local inoremap = require("whleucka.remap").inoremap
 local xnoremap = require("whleucka.remap").xnoremap
 local vnoremap = require("whleucka.remap").vnoremap
 local tmap = require("whleucka.remap").tmap
-local nmap = require("whleucka.remap").nmap
 
 -- Quick save / exit
 nnoremap("<leader>le", ":Lex 40<CR>")
@@ -40,7 +39,6 @@ nnoremap("<leader>tv", "<cmd> ToggleTerm direction=vertical size=60<CR>")
 nnoremap("<leader>tb", "<cmd> lua require('whleucka.terminal').bpytop_toggle()<CR>")
 nnoremap("<leader>tt", "<cmd> lua require('whleucka.terminal').htop_toggle()<CR>")
 nnoremap("<leader>tm", "<cmd> lua require('whleucka.terminal').matrix_toggle()<CR>")
-nnoremap("<leader>dbu", "<cmd> lua require('whleucka.terminal').dbu_toggle()<CR>")
 function _G.set_terminal_keymaps()
     tmap("<esc>", "<cmd> ToggleTermToggleAll<CR>")
     tmap("jk", [[<C-\><C-n>]])
@@ -62,6 +60,7 @@ nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 nnoremap("<leader>fo", "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
 nnoremap("<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
+nnoremap("<leader>fm", "<cmd>lua require('telescope').extensions.media_files.media_files()<CR>")
 
 -- Mason
 nnoremap("<leader>I", "<cmd> Mason<CR>")

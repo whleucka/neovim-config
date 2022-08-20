@@ -1,4 +1,5 @@
 require("nvim-tree").setup({
+    open_on_setup = false,
     sort_by = "case_sensitive",
     view = {
         adaptive_size = false,
@@ -23,7 +24,7 @@ require("nvim-tree").setup({
         group_empty = false,
     },
     filters = {
-        custom = { 
+        custom = {
             "^.git$",
         },
         dotfiles = false,
@@ -34,4 +35,9 @@ require("nvim-tree").setup({
         show_on_dirs = true,
         timeout = 400,
     },
+    actions = {
+        open_file = {
+            quit_on_open = true
+        }
+    }
 })
