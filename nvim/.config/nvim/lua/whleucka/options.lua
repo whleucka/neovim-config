@@ -21,6 +21,9 @@ vim.opt.mouse = "a"
 -- Cursor
 vim.opt.guicursor = ""
 
+-- Selection
+vim.cmd[[set clipboard+=unnamedplus]]
+
 -- Indentation & Tab/Spaces
 vim.opt.smartindent = true
 vim.opt.autoindent = true
