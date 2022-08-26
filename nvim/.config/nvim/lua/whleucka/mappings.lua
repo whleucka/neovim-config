@@ -17,14 +17,31 @@ nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
 nnoremap("<C-s>", "<cmd> so %<CR>")
 
 -- Custom
-nnoremap("<leader>B", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
+nnoremap("<leader>bb", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
+
+-- Packer
+nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
+
+-- Avoid Ex mode
+nnoremap("Q", "<nop>")
+-- Other annoying things
+nnoremap("q", "<nop>")
+nnoremap("<ESC>", "<cmd> noh<CR>")
+
+-- Break undo sequence
+inoremap("$", "$<C-g>u")
+inoremap("(", "(<C-g>u")
+inoremap(")", ")<C-g>u")
+inoremap("[", "[<C-g>u")
+inoremap("]", "]<C-g>u")
 
 -- LSP
 nnoremap("<leader>ca", "<cmd> lua vim.lsp.buf.code_action()<CR>")
 nnoremap("<leader>rn", "<cmd> lua vim.lsp.buf.rename()<CR>")
 -- Restart LSP
 nnoremap("<leader>r", "<cmd> LspRestart<CR>")
-
+-- Mason
+nnoremap("<leader>m", "<cmd> Mason<CR>")
 -- DAP
 nnoremap("<leader>dt", "<cmd>lua require'dapui'.toggle()<CR>")
 nnoremap("<F8>", "<cmd>lua require'dap'.continue()<CR>")
@@ -36,6 +53,8 @@ nnoremap("<leader>;", "<cmd>lua require'dap.ui.widgets'.hover()<CR>")
 nnoremap("<leader>df", "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>")
 nnoremap("bp", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
 nnoremap("<leader>dc", "<cmd>lua require'telescope'.extensions.dap.commands{}<CR>")
+-- Diagnostics
+nnoremap("<leader>T", "<cmd> TroubleToggle document_diagnostics<CR>")
 
 -- Terminal
 nnoremap([[<C-\>]], "<cmd> ToggleTerm direction=float<CR>")
@@ -51,12 +70,6 @@ function _G.set_terminal_keymaps()
     tmap("kj", [[<C-\><C-n>]])
 end
 
--- Packer
-nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
-
--- Diagnostics
-nnoremap("<leader>T", "<cmd> TroubleToggle document_diagnostics<CR>")
-
 -- Neo Git
 nnoremap("<leader>gs", "<cmd> Neogit kind=split<CR>")
 nnoremap("<leader>gc", "<cmd> Neogit commit<CR>")
@@ -69,30 +82,9 @@ nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 nnoremap("<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 nnoremap("<leader>fm", "<cmd>lua require('telescope').extensions.media_files.media_files()<CR>")
 
--- Mason
-nnoremap("<leader>I", "<cmd> Mason<CR>")
-
--- Exit insert
-inoremap("jk", "<ESC>")
-inoremap("kj", "<ESC>")
-
 -- File navigation
 nnoremap("<leader>le", ":Lex 40<CR>")
 nnoremap("<leader>e", "<cmd> NvimTreeToggle<CR>")
-
--- Avoid Ex mode
-nnoremap("Q", "<nop>")
--- Other annoying things
-nnoremap("q", "<nop>")
-nnoremap("<ESC>", "<cmd> noh<CR>")
-
--- Break undo sequence
-inoremap("$", "$<C-g>u")
-inoremap("(", "(<C-g>u")
-inoremap(")", ")<C-g>u")
-inoremap("[", "[<C-g>u")
-inoremap("]", "]<C-g>u")
-
 -- Split navigation
 nnoremap("<leader>h", "<C-w><C-h>")
 nnoremap("<leader>j", "<C-w><C-j>")
@@ -115,10 +107,9 @@ nnoremap("L", "$")
 nnoremap("j", "gj")
 nnoremap("k", "gk")
 
--- Stay in indent mode
+-- Reselect visual when indenting
 vnoremap("<", "<gv")
 vnoremap(">", ">gv")
--- Reselect visual when indenting
 xnoremap("<", "<gv")
 xnoremap(">", ">gv")
 
@@ -138,10 +129,6 @@ nnoremap("<leader>y", 'gg"+yG')
 xnoremap("<leader>p", '"_dP')
 nnoremap("<leader>d", '"_d')
 vnoremap("<leader>d", '"_d')
-
--- Indenting
-vnoremap("<", "<gv")
-vnoremap(">", ">gv")
 
 -- Quickfix lists
 nnoremap("q[", ":cprevious<CR>")
