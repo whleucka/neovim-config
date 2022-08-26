@@ -27,9 +27,15 @@ nnoremap("Q", "<nop>")
 -- Other annoying things
 nnoremap("q", "<nop>")
 nnoremap("<ESC>", "<cmd> noh<CR>")
+-- Exit to normal mode
+inoremap("jk", "<ESC>")
+inoremap("kj", "<ESC>")
+vnoremap("jk", "<ESC>")
+vnoremap("kj", "<ESC>")
 
 -- Break undo sequence
 inoremap("$", "$<C-g>u")
+inoremap(",", ",<C-g>u")
 inoremap("(", "(<C-g>u")
 inoremap(")", ")<C-g>u")
 inoremap("[", "[<C-g>u")
@@ -109,8 +115,8 @@ nnoremap("k", "gk")
 
 -- Reselect visual when indenting
 vnoremap("<", "<gv")
-vnoremap(">", ">gv")
 xnoremap("<", "<gv")
+vnoremap(">", ">gv")
 xnoremap(">", ">gv")
 
 -- ThePrimeagen (Yayayayayayaya)
@@ -123,7 +129,7 @@ nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
 nnoremap("J", "mzJ`z")
 -- Yank/Paste/Delete
-nnoremap("<leader>y", '"+y')
+xnoremap("<leader>y", '"+y')
 vnoremap("<leader>y", '"+y')
 nnoremap("<leader>y", 'gg"+yG')
 xnoremap("<leader>p", '"_dP')
