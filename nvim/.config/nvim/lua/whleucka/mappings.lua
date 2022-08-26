@@ -6,19 +6,24 @@ local vnoremap = require("whleucka.remap").vnoremap
 local tmap = require("whleucka.remap").tmap
 
 -- Quick save / exit
-nnoremap("<leader>le", ":Lex 40<CR>")
 nnoremap("<leader>w", "<cmd> update!<CR>")
 nnoremap("<leader>q", "<cmd> q<CR>")
 nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
+
+-- Formatting
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
-nnoremap("<leader>r", "<cmd> LspRestart<CR>")
+
+-- Quick source
+nnoremap("<leader>s", "<cmd> so %<CR>")
+
+-- Custom
 nnoremap("<leader>B", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
-nnoremap("q", "<nop>")
-nnoremap("<ESC>", "<cmd> noh<CR>")
 
 -- LSP
 nnoremap("<leader>ca", "<cmd> lua vim.lsp.buf.code_action()<CR>")
 nnoremap("<leader>rn", "<cmd> lua vim.lsp.buf.rename()<CR>")
+-- Restart LSP
+nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 
 -- DAP
 nnoremap("<leader>dt", "<cmd>lua require'dapui'.toggle()<CR>")
@@ -39,6 +44,7 @@ nnoremap("<leader>tv", "<cmd> ToggleTerm direction=vertical size=60<CR>")
 nnoremap("<leader>tb", "<cmd> lua require('whleucka.terminal').bpytop_toggle()<CR>")
 nnoremap("<leader>tt", "<cmd> lua require('whleucka.terminal').htop_toggle()<CR>")
 nnoremap("<leader>tm", "<cmd> lua require('whleucka.terminal').matrix_toggle()<CR>")
+nnoremap("<leader>tn", "<cmd> lua require('whleucka.terminal').ncdu_toggle()<CR>")
 function _G.set_terminal_keymaps()
     tmap("<esc>", "<cmd> ToggleTermToggleAll<CR>")
     tmap("jk", [[<C-\><C-n>]])
@@ -70,16 +76,16 @@ inoremap("jk", "<ESC>")
 inoremap("kj", "<ESC>")
 
 -- File navigation
+nnoremap("<leader>le", ":Lex 40<CR>")
 nnoremap("<leader>e", "<cmd> NvimTreeToggle<CR>")
 
 -- Avoid Ex mode
 nnoremap("Q", "<nop>")
+-- Other annoying things
+nnoremap("q", "<nop>")
+nnoremap("<ESC>", "<cmd> noh<CR>")
 
 -- Break undo sequence
-inoremap(".", ".<C-g>u")
-inoremap("!", "!<C-g>u")
-inoremap("?", "?<C-g>u")
-inoremap(",", ",<C-g>u")
 inoremap("$", "$<C-g>u")
 inoremap("(", "(<C-g>u")
 inoremap(")", ")<C-g>u")
@@ -91,7 +97,10 @@ nnoremap("<leader>h", "<C-w><C-h>")
 nnoremap("<leader>j", "<C-w><C-j>")
 nnoremap("<leader>k", "<C-w><C-k>")
 nnoremap("<leader>l", "<C-w><C-l>")
-nnoremap("<leader><leader>", "<C-w><C-p>")
+
+-- Buffer navigation
+nnoremap("<leader>.", "<cmd>BufferNext<CR>")
+nnoremap("<leader>,", "<cmd>BufferPrev<CR>")
 
 -- Resize splits
 nnoremap("<Up>", ":resize +2<CR>")
@@ -129,10 +138,10 @@ xnoremap("<leader>p", '"_dP')
 nnoremap("<leader>d", '"_d')
 vnoremap("<leader>d", '"_d')
 
--- Tabs
-nnoremap("<", "<cmd> BufferPrev<CR>")
-nnoremap(">", "<cmd> BufferNext<CR>")
+-- Indenting
+vnoremap("<", "<gv")
+vnoremap(">", ">gv")
 
 -- Quickfix lists
-nnoremap("[q", ":cprevious<CR>")
-nnoremap("]q", ":cnext<CR>")
+nnoremap("q[", ":cprevious<CR>")
+nnoremap("q]", ":cnext<CR>")
