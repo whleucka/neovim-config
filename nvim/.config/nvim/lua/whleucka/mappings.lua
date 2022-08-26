@@ -14,7 +14,7 @@ nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
 
 -- Quick source
-nnoremap("<leader>s", "<cmd> so %<CR>")
+nnoremap("<C-s>", "<cmd> so %<CR>")
 
 -- Custom
 nnoremap("<leader>B", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
@@ -27,7 +27,7 @@ nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 
 -- DAP
 nnoremap("<leader>dt", "<cmd>lua require'dapui'.toggle()<CR>")
-nnoremap("<C-s>", "<cmd>lua require'dap'.continue()<CR>")
+nnoremap("<F8>", "<cmd>lua require'dap'.continue()<CR>")
 nnoremap("<F9>", "<cmd>lua require'dap'.step_over()<CR>")
 nnoremap("<F10>", "<cmd>lua require'dap'.step_into()<CR>")
 nnoremap("<F11>", "<cmd>lua require'dap'.step_out()<CR>")
@@ -57,15 +57,15 @@ nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
 -- Diagnostics
 nnoremap("<leader>T", "<cmd> TroubleToggle document_diagnostics<CR>")
 
--- Git
+-- Neo Git
 nnoremap("<leader>gs", "<cmd> Neogit kind=split<CR>")
 nnoremap("<leader>gc", "<cmd> Neogit commit<CR>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
+nnoremap("<leader><leader>", "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
 nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
-nnoremap("<leader>fo", "<cmd>lua require('telescope.builtin').oldfiles()<CR>")
 nnoremap("<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 nnoremap("<leader>fm", "<cmd>lua require('telescope').extensions.media_files.media_files()<CR>")
 
