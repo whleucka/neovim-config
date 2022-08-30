@@ -57,6 +57,14 @@ vim.api.nvim_create_autocmd("TermOpen", {
     command = [[silent! lua set_terminal_keymaps()]]
 })
 
+local group = vim.api.nvim_create_augroup('MyCustomNeogitEvents', { clear = true })
+vim.api.nvim_create_autocmd('User', {
+    desc = "Close neogit on push complete",
+    pattern = 'NeogitPushComplete',
+    group = group,
+    callback = require('neogit').close,
+})
+
 -- Integrate lsp progress with nvim-notify
 --vim.api.nvim_create_autocmd({'UIEnter'}, {
 --    once = true,
