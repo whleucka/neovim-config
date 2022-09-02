@@ -23,11 +23,14 @@ if not status_ok then
     return
 end
 
-return packer.startup({function(use)
+return packer.startup({ function(use)
     -- My custom plugins
 
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
+
+    -- Dressing
+    use "stevearc/dressing.nvim"
 
     -- Cache plugins
     use "lewis6991/impatient.nvim"
@@ -35,7 +38,7 @@ return packer.startup({function(use)
     -- Theme
     use "folke/tokyonight.nvim"
 
-    -- Git signs 
+    -- Git signs
     use {
         'lewis6991/gitsigns.nvim',
         config = function()
@@ -56,36 +59,36 @@ return packer.startup({function(use)
         'VonHeikemen/lsp-zero.nvim',
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
-            {'nvim-lua/lsp_extensions.nvim'},
-            {'ray-x/lsp_signature.nvim',
-            config = function()
-                require("lsp_signature").setup{}
-            end},
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
+            { 'nvim-lua/lsp_extensions.nvim' },
+            { 'ray-x/lsp_signature.nvim',
+                config = function()
+                    require("lsp_signature").setup {}
+                end },
             { "rcarriga/nvim-dap-ui",
-            requires = {
-                {"mfussenegger/nvim-dap"},
-                {"mfussenegger/nvim-dap-python"},
-                {'nvim-telescope/telescope-dap.nvim'},
-                {'theHamsta/nvim-dap-virtual-text'}
-            },
-            config = function()
-                require("whleucka.dap")
-            end },
+                requires = {
+                    { "mfussenegger/nvim-dap" },
+                    { "mfussenegger/nvim-dap-python" },
+                    { 'nvim-telescope/telescope-dap.nvim' },
+                    { 'theHamsta/nvim-dap-virtual-text' }
+                },
+                config = function()
+                    require("whleucka.dap")
+                end },
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
         }
     }
 
@@ -173,11 +176,11 @@ return packer.startup({function(use)
 
     -- Git
     use { 'TimUntersberger/neogit',
-    requires = 'nvim-lua/plenary.nvim',
-    config = function()
-        require('neogit').setup{}
-    end
-}
+        requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require('neogit').setup {}
+        end
+    }
 
     -- Tpope plugins
     use {
@@ -190,11 +193,11 @@ return packer.startup({function(use)
         require("packer").sync()
     end
 end,
-config = {
-    display = {
-        open_fn = function()
-            -- Open in a floating window
-            return require('packer.util').float({ border = 'single' })
-        end
-    }
-}})
+    config = {
+        display = {
+            open_fn = function()
+                -- Open in a floating window
+                return require('packer.util').float({ border = 'single' })
+            end
+        }
+    } })
