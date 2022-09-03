@@ -174,6 +174,15 @@ return packer.startup({ function(use)
         }
     }
 
+    -- GPS status line (symbols)
+    use {
+        "SmiteshP/nvim-gps",
+        requires = "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("nvim-gps").setup{}
+        end
+    }
+
     -- Git
     use { 'TimUntersberger/neogit',
         requires = 'nvim-lua/plenary.nvim',
