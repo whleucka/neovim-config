@@ -1,5 +1,5 @@
 # My neovim config
-My portable neovim config. GNU stow to manage dotfiles.
+GNU stow to manage dotfiles. Good luck.
 
 ### Install
 ```

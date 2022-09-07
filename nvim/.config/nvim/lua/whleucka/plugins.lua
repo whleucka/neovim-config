@@ -192,7 +192,18 @@ return packer.startup({ function(use)
     }
 
     -- Diffs
-    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use { 
+        'sindrets/diffview.nvim', 
+        requires = 'nvim-lua/plenary.nvim', 
+        config = function()
+            local neogit = require("neogit")
+            neogit.setup {
+                integrations = {
+                    diffview = true
+                }
+            }
+        end
+    }
 
     -- Tpope plugins
     use {
