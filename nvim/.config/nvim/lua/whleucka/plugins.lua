@@ -191,6 +191,9 @@ return packer.startup({ function(use)
         end
     }
 
+    -- Diffs
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
     -- Tpope plugins
     use {
         "tpope/vim-surround",
