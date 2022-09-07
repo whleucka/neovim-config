@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+PACKER_COMP=./nvim/.config/nvim/plugin/packer_compiled.lua
+
+if [[ -f "$PACKER_COMP" ]]; then
+    rm $PACKER_COMP
+fi
+
+git pull
