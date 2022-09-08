@@ -7,8 +7,8 @@ local tmap = require("whleucka.remap").tmap
 
 -- Quick save / exit
 nnoremap("<leader>w", "<cmd> update!<CR>")
-nnoremap("<leader>q", "<cmd> q<CR>")
-nnoremap("<leader>c", "<cmd> BufferDelete<CR>")
+nnoremap("<leader>q", "<cmd> BufferDelete<CR>")
+nnoremap("<leader>Q", "<cmd> qall<CR>")
 
 -- Formatting
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
