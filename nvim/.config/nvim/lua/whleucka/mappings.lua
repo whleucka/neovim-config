@@ -79,7 +79,7 @@ end
 -- Neo Git
 nnoremap("<leader>gs", "<cmd> Neogit kind=split<CR>")
 nnoremap("<leader>gc", "<cmd> Neogit commit<CR>")
-nnoremap("<leader>gm", "<cmd> DiffViewOpen<CR>")
+nnoremap("<leader>gm", "<cmd> DiffviewOpen<CR>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
