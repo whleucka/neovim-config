@@ -27,11 +27,6 @@ nnoremap("Q", "<nop>")
 -- Other annoying things
 nnoremap("q", "<nop>")
 nnoremap("<ESC>", "<cmd> noh<CR>")
--- Exit to normal mode
-inoremap("jk", "<ESC>")
-inoremap("kj", "<ESC>")
-vnoremap("jk", "<ESC>")
-vnoremap("kj", "<ESC>")
 
 -- Break undo sequence
 inoremap("$", "$<C-g>u")
