@@ -12,6 +12,7 @@ nnoremap("<leader>x", "<cmd> qall<CR>")
 
 -- Formatting
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
+nnoremap("p", "p=`]")
 
 -- Quick source
 nnoremap("<C-s>", "<cmd> so %<CR>")
