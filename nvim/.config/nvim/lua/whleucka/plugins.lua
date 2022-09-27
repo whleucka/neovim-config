@@ -192,9 +192,9 @@ return packer.startup({ function(use)
     }
 
     -- Diffs
-    use { 
-        'sindrets/diffview.nvim', 
-        requires = 'nvim-lua/plenary.nvim', 
+    use {
+        'sindrets/diffview.nvim',
+        requires = 'nvim-lua/plenary.nvim',
         config = function()
             local neogit = require("neogit")
             neogit.setup {
@@ -210,6 +210,9 @@ return packer.startup({ function(use)
         "tpope/vim-surround",
         "tpope/vim-repeat",
     }
+
+    -- Profile
+    use { 'dstein64/vim-startuptime' }
 
     -- Automatically set up the configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then
