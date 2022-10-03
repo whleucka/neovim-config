@@ -117,18 +117,17 @@ vim.api.nvim_create_autocmd('User', {
 --})
 
 -- Will work in v0.8.0
---local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
---vim.api.nvim_create_autocmd("LspAttach", {
-    --    group = lsp,
-    --    callback = function()
-        --        print("With great power comes great responsibility")
-        --    end,
-        --})
-
-        -- Folds
-        --local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
-        --vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
-            --    group = folds,
-            --    pattern = '*',
-            --    command = "normal zR"
-            --})
+local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = lsp,
+    callback = function()
+        print("With great power comes great responsibility")
+    end,
+})
+-- Folds
+local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
+vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
+    group = folds,
+    pattern = '*',
+    command = "normal zR"
+})

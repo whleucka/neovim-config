@@ -10,6 +10,17 @@ vim.opt.encoding = "utf-8"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- Global status
+vim.laststatus = 3
+
+-- Spelling
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+vim.opt.spellsuggest = "best,9"
+
+-- Command height
+vim.opt.cmdheight = 0
+
 -- Show eol char
 vim.opt.list = true
 --vim.opt.listchars:append "space:⋅"
@@ -61,9 +72,6 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.hidden = true
 vim.opt.completeopt = { "menu" , "menuone" , "noselect", "noinsert" }
-
--- Command height
-vim.opt.cmdheight = 1
 
 -- Improve the delay
 vim.opt.updatetime = 50
