@@ -121,7 +121,7 @@ local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
 vim.api.nvim_create_autocmd("LspAttach", {
     group = lsp,
     callback = function()
-        print("With great power comes great responsibility")
+        print("🕷️ With great power comes great responsibility")
     end,
 })
 -- Folds
