@@ -27,7 +27,7 @@ nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
 nnoremap("Q", "<nop>")
 -- Other annoying things
 nnoremap("q", "<nop>")
-nnoremap("<ESC>", "<cmd> noh<CR>")
+nnoremap("<ESC>", "<ESC>:noh<CR><cmd> lua require('notify').dismiss()<CR>")
 
 -- Break undo sequence
 inoremap("$", "$<C-g>u")
