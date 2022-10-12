@@ -20,7 +20,7 @@ nnoremap("p", "p=`]")
 nnoremap("<C-s>", "<cmd> so %<CR>")
 
 -- Custom
-nnoremap("<leader>bb", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
+--nnoremap("<leader>bb", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
 
 -- Packer
 nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
@@ -30,6 +30,9 @@ nnoremap("Q", "<nop>")
 -- Other annoying things
 nnoremap("q", "<nop>")
 nnoremap("<ESC>", "<ESC>:noh<CR><cmd> lua require('notify').dismiss()<CR>")
+
+inoremap('jk', '<C-c>')
+inoremap('kj', '<C-c>')
 
 -- Break undo sequence
 inoremap("$", "$<C-g>u")
