@@ -101,7 +101,6 @@ return packer.startup({ function(use)
     use {
         'echasnovski/mini.nvim',
         config = function ()
-            require('mini.starter').setup() -- startup screen
             require('mini.map').setup() -- a sublime-like minimap
             require('mini.indentscope').setup() -- shows indent with  visual lines
             require('mini.ai').setup() -- extend a and i motions
