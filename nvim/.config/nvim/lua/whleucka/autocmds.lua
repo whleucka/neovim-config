@@ -80,3 +80,11 @@ vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
     pattern = '*',
     command = "normal zR"
 })
+
+-- Remove white space
+local ws = vim.api.nvim_create_augroup("WhiteSpace", {clear = true})
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = '*',
+  group = ws,
+  command = [[%s/\s\+$//e]],
+})

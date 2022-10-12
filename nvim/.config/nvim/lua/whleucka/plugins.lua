@@ -46,6 +46,14 @@ return packer.startup({ function(use)
         end
     }
 
+    -- Smooth scrolling
+    use {
+        'declancm/cinnamon.nvim',
+        config = function()
+            require('cinnamon').setup()
+        end
+    }
+
     -- Notifications
     use {
         "rcarriga/nvim-notify",
