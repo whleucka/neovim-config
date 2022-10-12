@@ -22,9 +22,9 @@ vim.opt.spellsuggest = "best,9"
 vim.opt.cmdheight = 0
 
 -- Show eol char
-vim.opt.list = true
+--vim.opt.list = true
 --vim.opt.listchars:append "space:⋅"
-vim.opt.listchars:append "eol:↴"
+--vim.opt.listchars:append "eol:↴"
 
 -- Mouse? Sure, why not
 vim.opt.mouse = "a"
