@@ -20,6 +20,9 @@ nnoremap("p", "p=`]")
 -- Quick source
 nnoremap("<C-s>", "<cmd> so %<CR>")
 
+-- Minimap
+nnoremap('<leader>m', '<cmd>lua require("mini.map").toggle()<cr>')
+
 -- Custom
 --nnoremap("<leader>bb", "<cmd> lua require('whleucka.functions').bitcoin_price()<CR>")
 

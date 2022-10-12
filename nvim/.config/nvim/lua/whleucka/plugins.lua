@@ -94,6 +94,7 @@ return packer.startup({ function(use)
         'echasnovski/mini.nvim',
         config = function ()
             require('mini.map').setup()
+            require('mini.map').open()
         end
     }
 
