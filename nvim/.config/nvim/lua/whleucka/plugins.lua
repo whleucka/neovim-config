@@ -67,17 +67,6 @@ return packer.startup({ function(use)
                 config = function()
                     require("lsp_signature").setup {}
                 end },
-            { "rcarriga/nvim-dap-ui",
-                requires = {
-                    { "mfussenegger/nvim-dap" },
-                    { "mfussenegger/nvim-dap-python" },
-                    { 'nvim-telescope/telescope-dap.nvim' },
-                    { 'theHamsta/nvim-dap-virtual-text' }
-                },
-                config = function()
-                    require("whleucka.dap")
-                end },
-
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
@@ -97,6 +86,14 @@ return packer.startup({ function(use)
         "akinsho/toggleterm.nvim", tag = 'v2.*',
         config = function()
             require("toggleterm").setup()
+        end
+    }
+
+    -- Minimap
+    use {
+        'echasnovski/mini.nvim',
+        config = function ()
+            require('mini.map').setup()
         end
     }
 

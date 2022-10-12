@@ -10,6 +10,8 @@ nnoremap("<leader>w", "<cmd> update!<CR>")
 nnoremap("<leader>q", "<cmd> BufferClose<CR>")
 nnoremap("<leader>x", "<cmd> qall<CR>")
 
+-- Minimap
+
 -- Formatting
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
 nnoremap("p", "p=`]")
@@ -43,18 +45,7 @@ nnoremap("<leader>rn", "<cmd> lua vim.lsp.buf.rename()<CR>")
 -- Restart LSP
 nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 -- Mason
-nnoremap("<leader>m", "<cmd> Mason<CR>")
--- DAP
-nnoremap("<leader>dt", "<cmd>lua require'dapui'.toggle()<CR>")
-nnoremap("<F8>", "<cmd>lua require'dap'.continue()<CR>")
-nnoremap("<F9>", "<cmd>lua require'dap'.step_over()<CR>")
-nnoremap("<F10>", "<cmd>lua require'dap'.step_into()<CR>")
-nnoremap("<F11>", "<cmd>lua require'dap'.step_out()<CR>")
-nnoremap("<F12>", "<cmd> DapTerminate<CR>")
-nnoremap("<leader>;", "<cmd>lua require'dap.ui.widgets'.hover()<CR>")
-nnoremap("<leader>df", "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>")
-nnoremap("bp", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
-nnoremap("<leader>dc", "<cmd>lua require'telescope'.extensions.dap.commands{}<CR>")
+nnoremap("<leader>M", "<cmd> Mason<CR>")
 -- Diagnostics
 nnoremap("<leader>T", "<cmd> TroubleToggle document_diagnostics<CR>")
 
