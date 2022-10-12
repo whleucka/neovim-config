@@ -106,10 +106,6 @@ return packer.startup({ function(use)
                 'nvim-telescope/telescope-fzf-native.nvim',
                 run = 'make'
             },
-            {
-                'nvim-lua/popup.nvim',
-                'nvim-telescope/telescope-media-files.nvim'
-            }
         },
     }
 

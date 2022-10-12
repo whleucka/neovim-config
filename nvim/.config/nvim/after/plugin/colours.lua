@@ -8,8 +8,8 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Transparent
---vim.g.tokyonight_transparent = true
---vim.g.tokyonight_transparent_sidebar = true
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_transparent_sidebar = true
 
 
 -- Load the colorscheme

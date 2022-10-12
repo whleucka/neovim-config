@@ -7,7 +7,8 @@ local tmap = require("whleucka.remap").tmap
 
 -- Quick save / exit
 nnoremap("<leader>w", "<cmd> update!<CR>")
-nnoremap("<leader>q", "<cmd> BufferClose<CR>")
+nnoremap("<leader>c", "<cmd> BufferClose<CR>")
+nnoremap("<leader>q", "<cmd> q<CR>")
 nnoremap("<leader>x", "<cmd> qall<CR>")
 
 -- Minimap
@@ -48,7 +49,7 @@ nnoremap("<leader>rn", "<cmd> lua vim.lsp.buf.rename()<CR>")
 -- Restart LSP
 nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 -- Mason
-nnoremap("<leader>M", "<cmd> Mason<CR>")
+nnoremap("<C-m>", "<cmd> Mason<CR>")
 -- Diagnostics
 nnoremap("<leader>T", "<cmd> TroubleToggle document_diagnostics<CR>")
 
@@ -77,7 +78,6 @@ nnoremap("<leader><leader>", "<cmd>lua require('telescope.builtin').oldfiles()<C
 nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
 nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 nnoremap("<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
-nnoremap("<leader>fm", "<cmd>lua require('telescope').extensions.media_files.media_files()<CR>")
 
 -- File navigation
 nnoremap("<leader>le", ":Lex 40<CR>")
