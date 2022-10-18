@@ -65,26 +65,27 @@ vim.api.nvim_create_autocmd('User', {
     callback = require('neogit').close,
 })
 
--- Works in v0.8.0
-local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
-vim.api.nvim_create_autocmd("LspAttach", {
-    group = lsp,
-    callback = function()
-        print("🕷️ With great power comes great responsibility")
-    end,
-})
--- Folds
-local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
-vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
-    group = folds,
-    pattern = '*',
-    command = "normal zR"
-})
-
--- Remove white space
 local ws = vim.api.nvim_create_augroup("WhiteSpace", {clear = true})
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = '*',
+  desc = "Remove white space",
   group = ws,
   command = [[%s/\s\+$//e]],
+})
+
+-- Works in v0.8.0
+--local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
+--vim.api.nvim_create_autocmd("LspAttach", {
+--    group = lsp,
+--    callback = function()
+--        print("🕷️ With great power comes great responsibility")
+--    end,
+--})
+
+local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
+vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
+    group = folds,
+    desc = "Auto unfold buff",
+    pattern = '*',
+    command = "normal zR"
 })

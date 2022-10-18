@@ -34,6 +34,7 @@ nnoremap("Q", "<nop>")
 -- Other annoying things
 nnoremap("q", "<nop>")
 nnoremap("<ESC>", "<ESC>:noh<CR><cmd> lua require('notify').dismiss()<CR>")
+nnoremap("<Enter>", "<Esc>")
 
 inoremap('jk', '<C-c>')
 inoremap('kj', '<C-c>')
@@ -52,9 +53,9 @@ nnoremap("<leader>rn", "<cmd> lua vim.lsp.buf.rename()<CR>")
 -- Restart LSP
 nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 -- Mason
-nnoremap("<C-m>", "<cmd> Mason<CR>")
+nnoremap("<leader>m", "<cmd> Mason<CR>")
 -- Diagnostics
-nnoremap("<leader>T", "<cmd> TroubleToggle document_diagnostics<CR>")
+nnoremap("<leader>t", "<cmd> TroubleToggle document_diagnostics<CR>")
 
 -- Terminal
 nnoremap([[<C-\>]], "<cmd> ToggleTerm direction=float<CR>")
@@ -105,10 +106,10 @@ nnoremap("<leader>8", "<cmd>BufferGoto 8<CR>")
 nnoremap("<leader>9", "<cmd>BufferGoto 9<CR>")
 
 -- Resize splits
-nnoremap("<leader><Up>", ":resize +2<CR>")
-nnoremap("<leader><Down>", ":resize -2<CR>")
-nnoremap("<leader><Left>", ":vertical resize +2<CR>")
-nnoremap("<leader><Right>", ":vertical resize -2<CR>")
+nnoremap("<Up>", ":resize +2<CR>")
+nnoremap("<Down>", ":resize -2<CR>")
+nnoremap("<Left>", ":vertical resize +2<CR>")
+nnoremap("<Right>", ":vertical resize -2<CR>")
 
 -- Line movements
 nnoremap("H", "^")

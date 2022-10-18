@@ -49,7 +49,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- Folds
-vim.wo.foldenable = true
+vim.wo.foldenable = false
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 vim.wo.foldnestmax = 3
