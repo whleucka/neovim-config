@@ -30,9 +30,14 @@ return packer.startup({ function(use)
     use "wbthomason/packer.nvim"
 
     -- Dressing
-    use "stevearc/dressing.nvim"
+    use {
+        "stevearc/dressing.nvim",
+        config = function()
+            require("whleucka.config.dressing")
+        end,
+    }
 
-    -- Cache plugins
+    -- Improve startup time
     use "lewis6991/impatient.nvim"
 
     -- Theme
@@ -92,10 +97,10 @@ return packer.startup({ function(use)
         end
     }
 
-    -- Minimap
+    -- Mini stuff (enable different modules)
     use {
         'echasnovski/mini.nvim',
-        config = function ()
+        config = function()
             require('mini.map').setup() -- a sublime-like minimap
             require('mini.indentscope').setup() -- shows indent with  visual lines
             require('mini.ai').setup() -- extend a and i motions
@@ -115,6 +120,9 @@ return packer.startup({ function(use)
                 run = 'make'
             },
         },
+        config = function()
+            require("whleucka.config.telescope")
+        end
     }
 
     -- Nvim Tree (file navigation)
@@ -125,7 +133,7 @@ return packer.startup({ function(use)
         },
         tag = 'nightly',
         config = function()
-            require("whleucka.tree")
+            require("whleucka.config.tree")
         end
     }
 
@@ -135,6 +143,9 @@ return packer.startup({ function(use)
         run = function()
             require('nvim-treesitter.install').update({ with_sync = true })
         end,
+        config = function()
+            require("whleucka.config.treesitter")
+        end
     }
 
     -- Error / Diagnostic Messages
@@ -153,11 +164,11 @@ return packer.startup({ function(use)
     use {
         'gelguy/wilder.nvim',
         config = function()
-            require("whleucka.wilder")
+            require("whleucka.config.wilder")
         end,
     }
 
-    -- Tabline (buffers)
+    -- Barbar (buffers)
     use {
         'romgrk/barbar.nvim',
         requires = "kyazdani42/nvim-web-devicons"
@@ -167,7 +178,7 @@ return packer.startup({ function(use)
     use {
         'nvim-lualine/lualine.nvim',
         config = function()
-            require("whleucka.lualine")
+            require("whleucka.config.lualine")
         end,
         requires = {
             'arkav/lualine-lsp-progress',
@@ -175,16 +186,16 @@ return packer.startup({ function(use)
         }
     }
 
-    -- GPS status line (symbols)
+    -- GPS status line (symbol breadcrumbs)
     use {
         "SmiteshP/nvim-gps",
         requires = "nvim-treesitter/nvim-treesitter",
         config = function()
-            require("nvim-gps").setup{}
+            require("nvim-gps").setup {}
         end
     }
 
-    -- Git
+    -- Neogit
     use { 'TimUntersberger/neogit',
         requires = 'nvim-lua/plenary.nvim',
         config = function()
@@ -192,7 +203,7 @@ return packer.startup({ function(use)
         end
     }
 
-    -- Diffs
+    -- Diffs w/ Neogit
     use {
         'sindrets/diffview.nvim',
         requires = 'nvim-lua/plenary.nvim',

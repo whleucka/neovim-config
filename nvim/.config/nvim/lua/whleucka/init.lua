@@ -1,9 +1,16 @@
+-- ************************
+-- WELCOME TO WILL'S CONFIG
+-- ************************
+--
+-- Lazy load plugins
 require("impatient")
-require("whleucka.plugins")
-require("whleucka.options")
-require("whleucka.mappings")
-require("whleucka.treesitter")
-require("whleucka.telescope")
-require("whleucka.lsp")
-require("whleucka.autocmds")
-require("whleucka.notifications")
+-- Excellent plugin collection
+require("whleucka.core.plugins")
+-- Nvim options
+require("whleucka.core.options")
+-- Key mappings
+require("whleucka.core.mappings")
+-- LSP configuration
+require("whleucka.core.lsp")
+-- Auto commands
+require("whleucka.core.autocmds")
