@@ -13,5 +13,5 @@ vim.g.tokyonight_transparent_sidebar = true
 
 
 -- Load the colorscheme
-vim.cmd[[colorscheme tokyonight]]
-vim.cmd[[hi BufferTabpageFill guibg=NONE]]
+vim.cmd [[colorscheme tokyonight]]
+vim.cmd [[hi BufferTabpageFill guibg=NONE]]

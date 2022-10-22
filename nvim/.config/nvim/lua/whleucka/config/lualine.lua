@@ -1,5 +1,5 @@
 local gps = require("nvim-gps")
-require('lualine').setup{
+require('lualine').setup {
     options = {
         theme = 'tokyonight'
     },

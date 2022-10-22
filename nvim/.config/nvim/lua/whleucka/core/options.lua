@@ -1,7 +1,5 @@
--- Leade/Globals
+-- Leader & Globals
 vim.g.mapleader = " "
--- DAP
-vim.g.dap_virtual_text = true
 
 -- Encoding
 vim.opt.encoding = "utf-8"
@@ -33,7 +31,7 @@ vim.opt.mouse = "a"
 vim.opt.guicursor = ""
 
 -- Selection
-vim.cmd[[set clipboard+=unnamedplus]]
+vim.cmd [[set clipboard+=unnamedplus]]
 
 -- Indentation & Tab/Spaces
 vim.opt.smartindent = true
@@ -71,7 +69,7 @@ vim.opt.showmatch = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.hidden = true
-vim.opt.completeopt = { "menu" , "menuone" , "noselect", "noinsert" }
+vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
 
 -- Improve the delay
 vim.opt.updatetime = 50
