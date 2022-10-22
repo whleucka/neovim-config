@@ -18,6 +18,23 @@ lsp.configure('sumneko_lua', {
 
 lsp.setup()
 
+-- VScode-style pictograms
+local cmp = require('cmp')
+local lspkind = require('lspkind')
+local cmp_config = lsp.defaults.cmp_config({
+    formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol_text',
+            maxwidth = 50,
+            ellipsis_char = '...',
+            before = function (entry, vim_item)
+                return vim_item
+            end
+        })
+    }
+})
+cmp.setup(cmp_config)
+
 -- Diagnostic messages
 vim.diagnostic.config({
     virtual_text = {
@@ -27,3 +44,4 @@ vim.diagnostic.config({
     update_in_insert = false,
     underline = true,
 })
+
