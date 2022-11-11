@@ -58,7 +58,7 @@ nnoremap("<C-m>", "<cmd> Mason<CR>")
 nnoremap("<leader>t", "<cmd> TroubleToggle document_diagnostics<CR>")
 
 -- Terminal
-nnoremap([[<C-\>]], "<cmd> ToggleTerm direction=float<CR>")
+nnoremap("<C-\\>", "<cmd> ToggleTerm direction=float<CR>")
 nnoremap("<leader>th", "<cmd> ToggleTerm direction=horizontal size=15<CR>")
 nnoremap("<leader>tv", "<cmd> ToggleTerm direction=vertical size=60<CR>")
 nnoremap("<leader>tb", "<cmd> lua require('whleucka.core.terminal').bpytop_toggle()<CR>")
@@ -101,6 +101,8 @@ nnoremap("<leader>6", "<cmd>BufferGoto 6<CR>")
 nnoremap("<leader>7", "<cmd>BufferGoto 7<CR>")
 nnoremap("<leader>8", "<cmd>BufferGoto 8<CR>")
 nnoremap("<leader>9", "<cmd>BufferGoto 9<CR>")
+nnoremap("<A-,>", "<cmd>BufferMovePrevious<CR>")
+nnoremap("<A-.>", "<cmd>BufferMoveNext<CR>")
 
 -- Resize splits
 nnoremap("<A-Down>", ":resize +2<CR>")
