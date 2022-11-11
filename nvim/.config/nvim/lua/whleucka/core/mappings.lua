@@ -11,11 +11,8 @@ nnoremap("<leader>c", "<cmd> BufferClose<CR>")
 nnoremap("<leader>q", "<cmd> q<CR>")
 nnoremap("<leader>x", "<cmd> qall<CR>")
 
--- Minimap
-
 -- Formatting
 nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
-nnoremap("p", "p=`]")
 
 -- Quick source
 nnoremap("<C-s>", "<cmd> so %<CR>")
@@ -46,6 +43,9 @@ inoremap("(", "(<C-g>u")
 inoremap(")", ")<C-g>u")
 inoremap("[", "[<C-g>u")
 inoremap("]", "]<C-g>u")
+inoremap("-", "-<C-g>u")
+inoremap("_", "_<C-g>u")
+inoremap(";", ";<C-g>u")
 
 -- LSP
 nnoremap("<leader>ca", "<cmd> lua vim.lsp.buf.code_action()<CR>")
@@ -72,9 +72,8 @@ function _G.set_terminal_keymaps()
 end
 
 -- Neo Git
-nnoremap("<leader>gs", "<cmd> Neogit kind=split<CR>")
-nnoremap("<leader>gc", "<cmd> Neogit commit<CR>")
-nnoremap("<leader>gm", "<cmd> DiffviewOpen<CR>")
+nnoremap("<C-g>", "<cmd> Neogit kind=split<CR>")
+-- nnoremap("<leader>gm", "<cmd> DiffviewOpen<CR>")
 
 -- Telescope
 nnoremap("<C-p>", "<cmd>lua require('telescope.builtin').git_files()<CR>")
@@ -86,9 +85,11 @@ nnoremap("<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 -- File navigation
 nnoremap("<leader>le", ":Lex 40<CR>")
 nnoremap("<leader>e", "<cmd> NvimTreeToggle<CR>")
+nnoremap("<leader>o", "<cmd> NvimTreeFocus<CR>")
 
 -- Buffer navigation
 -- This is the way
+nnoremap("<leader><Backspace>", "<C-w><C-w>")
 nnoremap("<leader>h", "<cmd>BufferNext<CR>")
 nnoremap("<leader>l", "<cmd>BufferPrev<CR>")
 nnoremap("<leader>1", "<cmd>BufferGoto 1<CR>")
@@ -102,8 +103,8 @@ nnoremap("<leader>8", "<cmd>BufferGoto 8<CR>")
 nnoremap("<leader>9", "<cmd>BufferGoto 9<CR>")
 
 -- Resize splits
-nnoremap("<A-Up>", ":resize +2<CR>")
-nnoremap("<A-Down>", ":resize -2<CR>")
+nnoremap("<A-Down>", ":resize +2<CR>")
+nnoremap("<A-Up>", ":resize -2<CR>")
 nnoremap("<A-Left>", ":vertical resize +2<CR>")
 nnoremap("<A-Right>", ":vertical resize -2<CR>")
 
