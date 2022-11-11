@@ -122,6 +122,16 @@ xnoremap("<", "<gv")
 vnoremap(">", ">gv")
 xnoremap(">", ">gv")
 
+-- Quickfix lists
+nnoremap("[q", "<cmd>cprevious<CR>")
+nnoremap("]q", "<cmd>cnext<CR>")
+-- Location lists
+nnoremap("[l", "<cmd>lprevious<CR>")
+nnoremap("]l", "<cmd>lnext<CR>")
+-- Diagnostics
+nnoremap("[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+nnoremap("]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+
 -- ThePrimeagen (Yayayayayayaya)
 -- Move visual lines up or down with J,K
 vnoremap("J", ":m '>+1<CR>gv=gv")
@@ -138,10 +148,3 @@ nnoremap("<leader>y", 'gg"+yG')
 xnoremap("<leader>p", '"_dP')
 nnoremap("<leader>d", '"_d')
 vnoremap("<leader>d", '"_d')
-
--- Quickfix lists
-nnoremap("[q", "<cmd>cprevious<CR>")
-nnoremap("]q", "<cmd>cnext<CR>")
--- Diagnostics
-nnoremap("[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
-nnoremap("]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
