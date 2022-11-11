@@ -53,7 +53,7 @@ nnoremap("<leader>rn", "<cmd> lua vim.lsp.buf.rename()<CR>")
 -- Restart LSP
 nnoremap("<leader>r", "<cmd> LspRestart<CR>")
 -- Mason
-nnoremap("<leader>m", "<cmd> Mason<CR>")
+nnoremap("<C-m>", "<cmd> Mason<CR>")
 -- Diagnostics
 nnoremap("<leader>t", "<cmd> TroubleToggle document_diagnostics<CR>")
 
@@ -86,15 +86,11 @@ nnoremap("<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
 -- File navigation
 nnoremap("<leader>le", ":Lex 40<CR>")
 nnoremap("<leader>e", "<cmd> NvimTreeToggle<CR>")
--- Split navigation
-nnoremap("<leader>h", "<C-w><C-h>")
-nnoremap("<leader>j", "<C-w><C-j>")
-nnoremap("<leader>k", "<C-w><C-k>")
-nnoremap("<leader>l", "<C-w><C-l>")
 
 -- Buffer navigation
-nnoremap("<leader>.", "<cmd>BufferNext<CR>")
-nnoremap("<leader>,", "<cmd>BufferPrev<CR>")
+-- This is the way
+nnoremap("<leader>h", "<cmd>BufferNext<CR>")
+nnoremap("<leader>l", "<cmd>BufferPrev<CR>")
 nnoremap("<leader>1", "<cmd>BufferGoto 1<CR>")
 nnoremap("<leader>2", "<cmd>BufferGoto 2<CR>")
 nnoremap("<leader>3", "<cmd>BufferGoto 3<CR>")
@@ -106,10 +102,10 @@ nnoremap("<leader>8", "<cmd>BufferGoto 8<CR>")
 nnoremap("<leader>9", "<cmd>BufferGoto 9<CR>")
 
 -- Resize splits
-nnoremap("<Up>", ":resize +2<CR>")
-nnoremap("<Down>", ":resize -2<CR>")
-nnoremap("<Left>", ":vertical resize +2<CR>")
-nnoremap("<Right>", ":vertical resize -2<CR>")
+nnoremap("<A-Up>", ":resize +2<CR>")
+nnoremap("<A-Down>", ":resize -2<CR>")
+nnoremap("<A-Left>", ":vertical resize +2<CR>")
+nnoremap("<A-Right>", ":vertical resize -2<CR>")
 
 -- Line movements
 nnoremap("H", "^")

@@ -101,12 +101,7 @@ return packer.startup({ function(use)
     use {
         'echasnovski/mini.nvim',
         config = function()
-            require('mini.map').setup() -- a sublime-like minimap
-            require('mini.indentscope').setup() -- shows indent with  visual lines
-            require('mini.ai').setup() -- extend a and i motions
-            require('mini.comment').setup() -- comment with gc
-            require('mini.jump').setup() -- jump multi-line
-            require('mini.pairs').setup() -- autopair
+            require("whleucka.config.mini")
         end
     }
 
@@ -195,25 +190,14 @@ return packer.startup({ function(use)
         end
     }
 
-    -- Neogit
+    -- Neogit & Diffs
     use { 'TimUntersberger/neogit',
-        requires = 'nvim-lua/plenary.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim',
+        },
         config = function()
-            require('neogit').setup {}
-        end
-    }
-
-    -- Diffs w/ Neogit
-    use {
-        'sindrets/diffview.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function()
-            local neogit = require("neogit")
-            neogit.setup {
-                integrations = {
-                    diffview = true
-                }
-            }
+            require("whleucka.config.neogit")
         end
     }
 
