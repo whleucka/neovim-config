@@ -140,5 +140,8 @@ nnoremap("<leader>d", '"_d')
 vnoremap("<leader>d", '"_d')
 
 -- Quickfix lists
-nnoremap("q[", ":cprevious<CR>")
-nnoremap("q]", ":cnext<CR>")
+nnoremap("[q", "<cmd>cprevious<CR>")
+nnoremap("]q", "<cmd>cnext<CR>")
+-- Diagnostics
+nnoremap("[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
+nnoremap("]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
