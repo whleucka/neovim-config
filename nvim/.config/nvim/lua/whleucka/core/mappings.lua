@@ -18,7 +18,7 @@ nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
 nnoremap("<C-s>", "<cmd> so %<CR>")
 
 -- Minimap
-nnoremap('<leader>m', '<cmd>lua require("mini.map").toggle()<cr>')
+--nnoremap('<leader>m', '<cmd>lua require("mini.map").toggle()<cr>')
 
 -- Custom
 --nnoremap("<leader>bb", "<cmd> lua require('whleucka.core.functions').bitcoin_price()<CR>")
