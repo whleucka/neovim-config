@@ -90,8 +90,8 @@ nnoremap("<leader>o", "<cmd> NvimTreeFocus<CR>")
 -- Buffer navigation
 -- This is the way
 nnoremap("<leader><Backspace>", "<C-w><C-w>")
-nnoremap("<leader>h", "<cmd>BufferNext<CR>")
-nnoremap("<leader>l", "<cmd>BufferPrev<CR>")
+nnoremap("<leader>h", "<cmd>BufferPrev<CR>")
+nnoremap("<leader>l", "<cmd>BufferNext<CR>")
 nnoremap("<leader>1", "<cmd>BufferGoto 1<CR>")
 nnoremap("<leader>2", "<cmd>BufferGoto 2<CR>")
 nnoremap("<leader>3", "<cmd>BufferGoto 3<CR>")
