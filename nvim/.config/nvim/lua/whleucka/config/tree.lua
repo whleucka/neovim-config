@@ -2,7 +2,7 @@ require("nvim-tree").setup({
     open_on_setup = false,
     sort_by = "case_sensitive",
     view = {
-        adaptive_size = false,
+        adaptive_size = true,
         mappings = {
             list = {
                 { key = "u", action = "dir_up" },
@@ -27,7 +27,7 @@ require("nvim-tree").setup({
         custom = {
             "^.git$",
         },
-        dotfiles = true,
+        dotfiles = false,
     },
     git = {
         enable = true,
