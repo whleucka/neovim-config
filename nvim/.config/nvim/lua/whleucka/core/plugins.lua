@@ -61,6 +61,9 @@ return packer.startup({ function(use)
     use {
         "rcarriga/nvim-notify",
         config = function()
+            require("notify").setup({
+              background_colour = "#2f384f",
+            })
             vim.notify = require("notify")
         end
     }
@@ -215,6 +218,9 @@ return packer.startup({ function(use)
 
     -- Profile
     use { 'dstein64/vim-startuptime' }
+
+    -- JSX
+    use { 'neoclide/vim-jsx-improve' }
 
     -- Automatically set up the configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then

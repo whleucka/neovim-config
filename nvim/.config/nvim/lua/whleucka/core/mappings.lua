@@ -5,14 +5,15 @@ local xnoremap = require("whleucka.core.remap").xnoremap
 local vnoremap = require("whleucka.core.remap").vnoremap
 local tmap = require("whleucka.core.remap").tmap
 
--- Quick save / exit
+-- Buffer/window cmds
 nnoremap("<leader>w", "<cmd> update!<CR>")
 nnoremap("<leader>c", "<cmd> BufferClose<CR>")
 nnoremap("<leader>q", "<cmd> q<CR>")
 nnoremap("<leader>x", "<cmd> qall<CR>")
 
 -- Formatting
-nnoremap("<leader>f", "<cmd> LspZeroFormat<CR>")
+nnoremap("<C-f>", function() vim.lsp.buf.format { async = true } end)
+vnoremap("<C-f>", function() vim.lsp.buf.format { async = true } end)
 
 -- Quick source
 nnoremap("<C-s>", "<cmd> so %<CR>")
