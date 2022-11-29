@@ -23,6 +23,7 @@ if not status_ok then
     return
 end
 
+
 return packer.startup({ function(use)
     -- My custom plugins
 
@@ -41,7 +42,12 @@ return packer.startup({ function(use)
     use "lewis6991/impatient.nvim"
 
     -- Theme
-    use "folke/tokyonight.nvim"
+    use {
+        "folke/tokyonight.nvim",
+        config = function()
+            require("whleucka.config.tokyonight")
+        end,
+    }
 
     -- Git signs
     use {
