@@ -154,12 +154,12 @@ return packer.startup({ function(use)
     }
 
     -- Wildmenu
-    --use {
-    --    'gelguy/wilder.nvim',
-    --    config = function()
-    --        require("whleucka.config.wilder")
-    --    end,
-    --}
+    use {
+        'gelguy/wilder.nvim',
+        config = function()
+            require("whleucka.config.wilder")
+        end,
+    }
 
     -- Barbar (buffers)
     use {
@@ -209,25 +209,25 @@ return packer.startup({ function(use)
     use { 'dstein64/vim-startuptime' }
 
     -- Noice!
-    use({
-        "folke/noice.nvim",
-        config = function()
-            require("whleucka.config.noice")
-        end,
-        requires = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            {
-                "rcarriga/nvim-notify",
-                config = function()
-                    require("whleucka.config.notify")
-                end
-            },
-        }
-    })
+    --use({
+    --    "folke/noice.nvim",
+    --    config = function()
+    --        require("whleucka.config.noice")
+    --    end,
+    --    requires = {
+    --        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --        "MunifTanjim/nui.nvim",
+    --        -- OPTIONAL:
+    --        --   `nvim-notify` is only needed, if you want to use the notification view.
+    --        --   If not available, we use `mini` as the fallback
+    --        {
+    --            "rcarriga/nvim-notify",
+    --            config = function()
+    --                require("whleucka.config.notify")
+    --            end
+    --        },
+    --    }
+    --})
 
 
     -- Automatically set up the configuration after cloning packer.nvim
