@@ -12,7 +12,7 @@ vim.opt.relativenumber = true
 vim.laststatus = 3
 
 -- Spelling
---vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = "en_us"
 vim.opt.spellsuggest = "best,9"
 
