@@ -36,7 +36,7 @@ clone() {
 stow() {
 	printf "Stowing nvim...\n"
 	cd "$INSTALL_PATH"
-	stow nvim/
+	stow nvim
 }
 
 install_packer() {
@@ -50,7 +50,8 @@ which stow >/dev/null && (printf "Stow is installed\n" && sleep 1) || stow_warni
 
 [ -d "$HOME/.config/nvim" ] && rename_dir || clone
 [ ! -d "$HOME/.local/share/nvim/site/pack/packer" ] && install_packer
-[ -d "$INSTALL_PATH" ] && stow || stow_error
+
+stow || stow_error
 
 printf "Installing plugins...\n" && sleep 1
 $(which nvim) --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
