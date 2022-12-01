@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+INSTALL_PATH=$HOME/.neovim-config
+
 nvim_warning() {
 	printf "Oops! Install neovim and try again\n"
 	exit
@@ -28,17 +30,17 @@ rename_dir() {
 
 clone() {
 	printf "Cloning repository...\n"
-	git clone https://github.com/whleucka/neovim-config ~/neovim-config
+	git clone https://github.com/whleucka/neovim-config "$INSTALL_PATH"
 }
 
 stow() {
 	printf "Stowing nvim...\n"
-	cd ~/neovim-config && stow nvim
+	cd "$INSTALL_PATH" && stow nvim
 }
 
 install_packer() {
 	printf "Installing packer...\n"
-	git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 }
 
 which nvim >/dev/null && echo "Neovim is installed" || nvim_warning
