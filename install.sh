@@ -43,15 +43,15 @@ install_packer() {
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 }
 
-which nvim >/dev/null && echo "Neovim is installed" || nvim_warning
-which git >/dev/null && echo "Git is installed" || git_warning
-which stow >/dev/null && echo "Stow is installed" || stow_warning
+which nvim >/dev/null && echo ("Neovim is installed" && sleep 1) || nvim_warning
+which git >/dev/null && echo ("Git is installed" && sleep 1) || git_warning
+which stow >/dev/null && echo ("Stow is installed" && sleep 1) || stow_warning
 
 [ -d "$HOME/.config/nvim" ] && rename_dir || clone
 [ ! -d "$HOME/.local/share/nvim/site/pack/packer" ] && install_packer
 [ -d "$HOME/neovim-config" ] && stow || stow_error
 
-printf "Installing plugins...\n"
+printf "Installing plugins...\n" && sleep 1
 $(which nvim) --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 printf "You have successfully installed neovim-config, have a great day!\n"
