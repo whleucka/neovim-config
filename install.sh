@@ -25,7 +25,7 @@ clone() {
 
 symlink() {
 	printf "Creating symlink..."
-	ln -s "$INSTALL_PATH/nvim" "$HOME/.config/nvim"
+	ln -s "$INSTALL_PATH/nvim" "$HOME/.config"
 }
 
 install_packer() {
