@@ -3,7 +3,7 @@ Spared no expense
 
 ### Install
 ```
-curl -s https://raw.githubusercontent.com/whleucka/neovim-config/main/install.sh | bash -s
+curl -s https://raw.githubusercontent.com/whleucka/neovim-config/main/install.sh -H "Cache-Control: no-cache, no-store" | bash -s
 ```
 
 ### Uninstall
