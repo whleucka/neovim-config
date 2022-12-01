@@ -31,7 +31,8 @@ nnoremap("<leader>ps", "<cmd> PackerSync<CR>")
 nnoremap("Q", "<nop>")
 -- Other annoying things
 nnoremap("q", "<nop>")
-nnoremap("<Enter>", "<cmd>noh<CR><cmd> lua require('notify').dismiss()<CR>")
+--nnoremap("<Enter>", "<cmd>noh<CR><cmd> lua require('notify').dismiss()<CR>")
+nnoremap("<Enter>", "<cmd>noh<CR>")
 
 inoremap('jk', '<C-c>')
 inoremap('kj', '<C-c>')
