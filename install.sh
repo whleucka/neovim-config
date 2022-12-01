@@ -43,9 +43,9 @@ install_packer() {
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 }
 
-which nvim >/dev/null && (echo "Neovim is installed" && sleep 1) || nvim_warning
-which git >/dev/null && (echo "Git is installed" && sleep 1) || git_warning
-which stow >/dev/null && (echo "Stow is installed" && sleep 1) || stow_warning
+which nvim >/dev/null && (printf "Neovim is installed\n" && sleep 1) || nvim_warning
+which git >/dev/null && (printf "Git is installed\n" && sleep 1) || git_warning
+which stow >/dev/null && (printf "Stow is installed\n" && sleep 1) || stow_warning
 
 [ -d "$HOME/.config/nvim" ] && rename_dir || clone
 [ ! -d "$HOME/.local/share/nvim/site/pack/packer" ] && install_packer
