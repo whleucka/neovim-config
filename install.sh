@@ -12,16 +12,6 @@ git_warning() {
 	exit
 }
 
-stow_warning() {
-	printf "Oops! Install stow and try again\n"
-	exit
-}
-
-stow_error() {
-	printf "Error! Couldn't create stow link... :(\n"
-	exit
-}
-
 rename_dir() {
 	mv $HOME/.config/nvim $HOME/.config/nvim.old
 	printf "Your neovig config has been transfered to ~/.config/nvim.old\n"
@@ -33,10 +23,9 @@ clone() {
 	git clone https://github.com/whleucka/neovim-config "$INSTALL_PATH"
 }
 
-stow() {
-	printf "Stowing nvim...\n"
-	cd "$INSTALL_PATH"
-	stow nvim
+symlink() {
+	printf "Creating symlink..."
+	ln -s "$INSTALL_PATH/nvim" "$HOME/.config/nvim"
 }
 
 install_packer() {
@@ -44,15 +33,16 @@ install_packer() {
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 }
 
+# Make sure deps exists
 which nvim >/dev/null && (printf "Neovim is installed\n" && sleep 1) || nvim_warning
 which git >/dev/null && (printf "Git is installed\n" && sleep 1) || git_warning
-which stow >/dev/null && (printf "Stow is installed\n" && sleep 1) || stow_warning
 
+# Check paths + hooks
 [ -d "$HOME/.config/nvim" ] && rename_dir || clone
 [ ! -d "$HOME/.local/share/nvim/site/pack/packer" ] && install_packer
+[ -d "$INSTALL_PATH" ] && symlink
 
-stow || stow_error
-
+# Packer
 printf "Installing plugins...\n" && sleep 1
 $(which nvim) --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
