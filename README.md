@@ -8,7 +8,7 @@ curl -s https://raw.githubusercontent.com/whleucka/neovim-config/main/install.sh
 
 ### Uninstall
 ```
-stow -D ~/neovim-config/nvim
+unlink $HOME/.config/nvim
 ```
 
 ### Acknowledgments
