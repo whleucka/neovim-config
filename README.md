@@ -3,13 +3,12 @@ Spared no expense
 
 ### Install
 ```
-git clone https://github.com/whleucka/neovim-config.git && cd ./neovim-config
-stow nvim
+curl -s https://raw.githubusercontent.com/whleucka/neovim-config/main/install.sh | bash -s
 ```
 
 ### Uninstall
 ```
-stow -D nvim
+stow -D ~/neovim-config/nvim
 ```
 
 ### Acknowledgments
