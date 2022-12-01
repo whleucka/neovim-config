@@ -33,7 +33,7 @@ clone() {
 
 stow() {
 	printf "Stowing nvim...\n"
-	stow ~/neovim-config/nvim
+	cd ~/neovim-config && stow nvim
 }
 
 install_packer() {
