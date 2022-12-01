@@ -35,7 +35,7 @@ clone() {
 
 stow() {
 	printf "Stowing nvim...\n"
-	cd "$INSTALL_PATH" && stow nvim
+	$(which stow) "$INSTALL_PATH/nvim"
 }
 
 install_packer() {
