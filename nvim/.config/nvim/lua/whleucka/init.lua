@@ -3,7 +3,7 @@
 -- ************************
 --
 -- Lazy load plugins
-require("impatient")
+--require("impatient")
 -- Excellent plugin collection
 require("whleucka.core.plugins")
 -- Nvim options
