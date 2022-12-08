@@ -208,6 +208,21 @@ return packer.startup({ function(use)
     -- Profile
     use { 'dstein64/vim-startuptime' }
 
+    -- My plugins
+    use { 'whleucka/soprano.nvim',
+        requires = {
+            "akinsho/toggleterm.nvim"
+        }
+    }
+
+    -- Fancy notifications
+    use {
+        "rcarriga/nvim-notify",
+        config = function()
+            require("whleucka.config.notify")
+        end
+    }
+
     -- Noice!
     --use({
     --    "folke/noice.nvim",

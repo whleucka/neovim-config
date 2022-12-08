@@ -15,8 +15,11 @@ nnoremap("<leader>x", "<cmd> qall<CR>")
 nnoremap("<C-f>", function() vim.lsp.buf.format { async = true } end)
 vnoremap("<C-f>", function() vim.lsp.buf.format { async = true } end)
 
+-- My first plug
+nnoremap("<C-s>", '<cmd>lua require("soprano").search()<CR>')
+
 -- Quick source
-nnoremap("<C-s>", "<cmd> so %<CR>")
+nnoremap("<C-0>", "<cmd> so %<CR>")
 
 -- Minimap
 --nnoremap('<leader>m', '<cmd>lua require("mini.map").toggle()<cr>')
