@@ -1,5 +1,5 @@
 # My neovim config
-Spared no expense
+<img src="https://media.tenor.com/ETW2DDjY6z0AAAAd/spared-no-expense-jurassic-park.gif" alt='spared no expense'>
 
 ### Install
 ```
