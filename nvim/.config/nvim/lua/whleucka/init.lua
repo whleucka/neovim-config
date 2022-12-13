@@ -3,7 +3,7 @@
 -- ************************
 --
 -- Lazy load plugins
---require("impatient")
+require("impatient").enable_profile()
 -- Excellent plugin collection
 require("whleucka.core.plugins")
 -- Nvim options
