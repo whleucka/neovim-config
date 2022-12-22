@@ -2,9 +2,9 @@
 -- WELCOME TO WILL'S CONFIG
 -- ************************
 --
--- Lazy load plugins
-require("impatient").enable_profile()
--- Excellent plugin collection
+-- An excellent plugin collection
+-- Spared no expense.
+--
 require("whleucka.core.plugins")
 -- Nvim options
 require("whleucka.core.options")

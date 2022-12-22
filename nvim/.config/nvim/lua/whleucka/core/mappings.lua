@@ -8,11 +8,13 @@ local tmap = require("whleucka.core.remap").tmap
 -- Avoid Ex mode
 nnoremap("Q", "<nop>")
 -- Other annoying things
-nnoremap("q", "<nop>")
 nnoremap("<Enter>", "<cmd>noh<CR><cmd> lua require('notify').dismiss()<CR>")
-
+nnoremap("<Esc>", "<Enter>")
 inoremap('jk', '<C-c>')
 inoremap('kj', '<C-c>')
+
+-- Soprano search (music)
+nnoremap("<C-s>", "<cmd>lua require('soprano').search()<cr>")
 
 -- Break undo sequence
 inoremap("$", "$<C-g>u")
@@ -24,10 +26,6 @@ inoremap("]", "]<C-g>u")
 inoremap("-", "-<C-g>u")
 inoremap("_", "_<C-g>u")
 inoremap(";", ";<C-g>u")
-
--- Formatting
-nnoremap("<C-f>", function() vim.lsp.buf.format { async = true } end)
-vnoremap("<C-f>", function() vim.lsp.buf.format { async = true } end)
 
 -- Terminal
 function _G.set_terminal_keymaps()
@@ -56,11 +54,11 @@ vnoremap(">", ">gv")
 xnoremap(">", ">gv")
 
 -- Quickfix lists
-nnoremap("[q", "<cmd>cprevious<CR>zz")
-nnoremap("]q", "<cmd>cnext<CR>zz")
+nnoremap("q[", "<cmd>cprevious<CR>zz")
+nnoremap("q]", "<cmd>cnext<CR>zz")
 -- Location lists
-nnoremap("[l", "<cmd>lprevious<CR>zz")
-nnoremap("]l", "<cmd>lnext<CR>zz")
+nnoremap("l[", "<cmd>lprevious<CR>zz")
+nnoremap("l]", "<cmd>lnext<CR>zz")
 
 -- Primeagen stuff
 vnoremap("J", ":m '>+1<CR>gv=gv")
