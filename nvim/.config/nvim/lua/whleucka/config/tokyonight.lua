@@ -1,5 +1,4 @@
 -- Returns either day or night theme, depending on the current time of day
--- TODO dynamically set up / down
 local day_n_night = function()
     local hour = tonumber(os.date("%H"))
     local month = tonumber(os.date("%m"))
