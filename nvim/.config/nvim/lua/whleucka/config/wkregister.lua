@@ -9,8 +9,17 @@ wk.register({
     c = { "<cmd> BufferClose<cr>", "Close Buffer" },
     h = { "<cmd>BufferPrev<cr>", "Previous Buffer" },
     l = { "<cmd>BufferNext<cr>", "Next Buffer" },
-    g = { "<cmd> Neogit kind=split<cr>", "Neogit" },
-    m = { "<cmd> Mason<cr>", "Mason" },
+    m = {
+        name = "Mason",
+        m = { "<cmd> Mason<cr>", "Mason" },
+        i = { "<cmd> MasonInstall<cr>", "Install" },
+        u = { "<cmd> MasonUninstall<cr>", "Uninstall" },
+        l = { "<cmd> MasonLog<cr>", "Log" },
+    },
+    g = {
+        name = "Git",
+        s = { "<cmd> Neogit kind=split<cr>", "Neogit" },
+    },
     t = {
         name = "Terminal",
         ['\\'] = { "<cmd> ToggleTerm direction=float<cr>", "Floating" },
@@ -55,7 +64,9 @@ wk.register({
     },
     d = {
         name = "Diagnostics",
-        d = { "<cmd> TroubleToggle document_diagnostics<cr>", "Document" },
+        t = { "<cmd> TroubleToggle<cr>", "Trouble" },
+        ['tc'] = { "<cmd> TroubleClose<cr>", "Trouble" },
+        ['td'] = { "<cmd> TroubleToggle document_diagnostics<cr>", "Document" },
     },
     s = {
         name = "Special",
