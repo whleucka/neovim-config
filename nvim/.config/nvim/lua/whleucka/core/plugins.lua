@@ -153,7 +153,7 @@ return packer.startup({ function(use)
         end
     }
 
-    -- Which key was it?
+    -- Which key
     use {
         "folke/which-key.nvim",
         config = function()

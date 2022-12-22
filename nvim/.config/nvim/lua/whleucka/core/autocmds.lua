@@ -74,13 +74,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- Works in v0.8.0
---local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
---vim.api.nvim_create_autocmd("LspAttach", {
---    group = lsp,
---    callback = function()
---        print("🕷️ With great power comes great responsibility")
---    end,
---})
+local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = lsp,
+    callback = function()
+        print("🕷️ With great power comes great responsibility")
+    end,
+})
 
 local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
 vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
