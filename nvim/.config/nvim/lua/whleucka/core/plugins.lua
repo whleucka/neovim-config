@@ -236,12 +236,6 @@ return packer.startup({ function(use)
         end
     }
 
-    -- Tpope plugins
-    use {
-        "tpope/vim-surround",
-        "tpope/vim-repeat",
-    }
-
     -- Profile
     use { 'dstein64/vim-startuptime' }
 
