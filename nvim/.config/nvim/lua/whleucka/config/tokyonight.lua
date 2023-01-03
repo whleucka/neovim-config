@@ -1,12 +1,17 @@
 -- Returns either day or night theme, depending on the current time of day
 local day_n_night = function()
     local now = os.time()
+    -- t for isdst
     local t = os.date("*t", now)
+    -- current 24 hr
     local hour = tonumber(os.date("%H"))
+    -- todo: make this dynamic?
     local sun_up = t.isdst and 6 or 8
-    local sun_down = t.isdst and 18 or 16
+    local sun_down = t.isdst and 20 or 16
     if hour >= sun_up and hour <= sun_down then
-        return "day"
+        -- day is a bit bright, so I will default on moon
+        -- return "day"
+        return "moon"
     end
     return "night"
 end
