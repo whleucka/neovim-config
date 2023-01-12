@@ -15,22 +15,22 @@ require('mini.jump').setup() --jump forward/backward to a single character
 -- require('mini.misc').setup() --miscellaneous functions
 -- require('mini.pairs').setup() --autopairs
 -- require('mini.sessions').setup() --Session management
-local starter = require('mini.starter') --Start screen
-starter.setup({
-    evaluate_single = true,
-    items = {
-        starter.sections.builtin_actions(),
-        starter.sections.recent_files(10, false),
-        starter.sections.recent_files(10, true),
-        -- Use this if you set up 'mini.sessions'
-        starter.sections.sessions(5, true)
-    },
-    content_hooks = {
-        starter.gen_hook.adding_bullet(),
-        starter.gen_hook.indexing('all', { 'Builtin actions' }),
-        starter.gen_hook.padding(3, 2),
-    },
-})
+--local starter = require('mini.starter') --Start screen
+--starter.setup({
+--    evaluate_single = true,
+--    items = {
+--        starter.sections.builtin_actions(),
+--        starter.sections.recent_files(10, false),
+--        starter.sections.recent_files(10, true),
+--        -- Use this if you set up 'mini.sessions'
+--        starter.sections.sessions(5, true)
+--    },
+--    content_hooks = {
+--        starter.gen_hook.adding_bullet(),
+--        starter.gen_hook.indexing('all', { 'Builtin actions' }),
+--        starter.gen_hook.padding(3, 2),
+--    },
+--})
 -- require('mini.statusline').setup() --Statusline
 require('mini.surround').setup() --Surround actions
 -- require('mini.tabline').setup() --Tabline
