@@ -41,8 +41,11 @@ nnoremap("<A-Left>", ":vertical resize +2<CR>")
 nnoremap("<A-Right>", ":vertical resize -2<CR>")
 
 -- Line movements
-nnoremap("H", "^")
-nnoremap("L", "$")
+nnoremap("<leader>h", "^")
+nnoremap("<leader>l", "$")
+-- Quick tab movements
+nnoremap("H", "<cmd>BufferPrevious<cr>")
+nnoremap("L", "<cmd>BufferNext<cr>")
 -- Improve movements on wrapped lines
 nnoremap("j", "gj")
 nnoremap("k", "gk")

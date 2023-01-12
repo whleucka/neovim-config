@@ -3,8 +3,6 @@ local wk = require("which-key")
 wk.register({
     c = { "<cmd> BufferClose<cr>", "Close Buffer" },
     e = { "<cmd> NvimTreeToggle<cr>", "Toggle NvimTree" },
-    h = { "<cmd>BufferPrev<cr>", "Previous Buffer" },
-    l = { "<cmd>BufferNext<cr>", "Next Buffer" },
     o = { "<cmd> NvimTreeFocus<cr>", "Focus NvimTree" },
     q = { "<cmd> q<cr>", "Quit Buffer" },
     w = { "<cmd> update!<cr>", "Write Buffer" },
