@@ -36,3 +36,20 @@ require('mini.surround').setup() --Surround actions
 -- require('mini.tabline').setup() --Tabline
 -- require('mini.test') .setup()--test Neovim plugins
 -- require('mini.trailspace').setup() --Trailspace (highlight and remove)
+local move = require("mini.move") -- Move text
+move.setup({
+    -- Module mappings. Use `''` (empty string) to disable one.
+    mappings = {
+        -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+        left = '<M-h>',
+        right = '<M-l>',
+        down = 'J',
+        up = 'K',
+
+        -- Move current line in Normal mode
+        line_left = '<M-h>',
+        line_right = '<M-l>',
+        line_down = '<M-j>',
+        line_up = '<M-k>',
+    },
+})

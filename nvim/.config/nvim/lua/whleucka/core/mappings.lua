@@ -63,11 +63,8 @@ nnoremap("q]", "<cmd>cnext<CR>zz")
 nnoremap("l[", "<cmd>lprevious<CR>zz")
 nnoremap("l]", "<cmd>lnext<CR>zz")
 
--- Primeagen stuff
-vnoremap("J", ":m '>+1<CR>gv=gv")
-vnoremap("K", ":m '<-2<CR>gv=gv")
 -- Keep it centered
-nnoremap("J", "mzJ`z")
+nnoremap("J", "mzJ`z") -- join lines fix
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("n", "nzzzv")
