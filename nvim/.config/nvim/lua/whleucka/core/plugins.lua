@@ -133,6 +133,9 @@ return packer.startup({ function(use)
     -- Treesitter (syntax)
     use {
         'nvim-treesitter/nvim-treesitter',
+        requires = {
+            'nvim-treesitter/nvim-treesitter-context'
+        },
         run = function()
             require('nvim-treesitter.install').update({ with_sync = true })
         end,
@@ -214,15 +217,6 @@ return packer.startup({ function(use)
             'arkav/lualine-lsp-progress',
             'kyazdani42/nvim-web-devicons', opt = true
         }
-    }
-
-    -- GPS status line (symbol breadcrumbs)
-    use {
-        "SmiteshP/nvim-gps",
-        requires = "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("nvim-gps").setup {}
-        end
     }
 
     -- Neogit & Diffs
