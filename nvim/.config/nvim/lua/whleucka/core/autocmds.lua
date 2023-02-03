@@ -67,15 +67,15 @@ vim.api.nvim_create_autocmd('User', {
 
 local ws = vim.api.nvim_create_augroup("WhiteSpace", {clear = true})
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = '*',
-  desc = "Remove white space",
-  group = ws,
-  command = [[%s/\s\+$//e]],
+    pattern = '*',
+    desc = "Remove white space",
+    group = ws,
+    command = [[%s/\s\+$//e]],
 })
 
--- Works in v0.8.0
 local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
 vim.api.nvim_create_autocmd("LspAttach", {
+    desc = "When the LSP client attaches",
     group = lsp,
     callback = function()
         vim.notify("LSP attached... 🕷️ With great power comes great responsibility", "SUCCESS", {
@@ -91,3 +91,4 @@ vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
     pattern = '*',
     command = "normal zR"
 })
+

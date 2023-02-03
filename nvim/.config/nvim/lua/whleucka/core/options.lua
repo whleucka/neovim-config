@@ -72,7 +72,7 @@ vim.opt.hidden = true
 vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
 
 -- Improve the delay
-vim.opt.updatetime = 50
+vim.opt.updatetime = 200
 
 -- Don't pass messages to |ins-completion-menu|
 vim.opt.shortmess:append("c")
