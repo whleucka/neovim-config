@@ -96,12 +96,12 @@ return packer.startup({ function(use)
     }
 
     -- Mini stuff (enable different modules)
-    --use {
-    --    'echasnovski/mini.nvim',
-    --    config = function()
-    --        require("whleucka.config.mini")
-    --    end
-    --}
+    use {
+        'echasnovski/mini.nvim',
+        config = function()
+            require("whleucka.config.mini")
+        end
+    }
 
     -- Telescope (pickers)
     use {
