@@ -73,17 +73,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     command = [[%s/\s\+$//e]],
 })
 
-local lsp = vim.api.nvim_create_augroup("LSP", { clear = true })
-vim.api.nvim_create_autocmd("LspAttach", {
-    desc = "When the LSP client attaches",
-    group = lsp,
-    callback = function()
-        vim.notify("LSP attached... 🕷️ With great power comes great responsibility", "SUCCESS", {
-            title = "Neovim LSP"
-        })
-    end,
-})
-
 local folds = vim.api.nvim_create_augroup("FoldIt", {clear = true})
 vim.api.nvim_create_autocmd("BufReadPost,FileReadPost", {
     group = folds,
