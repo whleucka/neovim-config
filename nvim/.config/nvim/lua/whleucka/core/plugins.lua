@@ -67,9 +67,9 @@ return packer.startup({ function(use)
             { 'williamboman/mason-lspconfig.nvim' },
             { 'nvim-lua/lsp_extensions.nvim' },
             { 'ray-x/lsp_signature.nvim',
-            config = function()
-                require("lsp_signature").setup {}
-            end },
+                config = function()
+                    require("lsp_signature").setup {}
+                end },
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
@@ -96,12 +96,12 @@ return packer.startup({ function(use)
     }
 
     -- Mini stuff (enable different modules)
-    use {
-        'echasnovski/mini.nvim',
-        config = function()
-            require("whleucka.config.mini")
-        end
-    }
+    --use {
+    --    'echasnovski/mini.nvim',
+    --    config = function()
+    --        require("whleucka.config.mini")
+    --    end
+    --}
 
     -- Telescope (pickers)
     use {
@@ -141,20 +141,6 @@ return packer.startup({ function(use)
         end
     }
 
-    -- Context
-    use({
-        "utilyre/barbecue.nvim",
-        tag = "*",
-        requires = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons", -- optional dependency
-        },
-        after = "nvim-web-devicons", -- keep this if you're using NvChad
-        config = function()
-            require("barbecue").setup()
-        end,
-    })
-
     -- Error / Diagnostic Messages
     use {
         "folke/trouble.nvim",
@@ -175,92 +161,71 @@ return packer.startup({ function(use)
         end
     }
 
-    -- Noice!
-    --use({
-        --    "folke/noice.nvim",
-        --    config = function()
-            --        require("whleucka.config.noice")
-            --    end,
-            --    requires = {
-                --        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-                --        "MunifTanjim/nui.nvim",
-                --        -- OPTIONAL:
-                --        --   `nvim-notify` is only needed, if you want to use the notification view.
-                --        --   If not available, we use `mini` as the fallback
-                --        {
-                    --            "rcarriga/nvim-notify",
-                    --            config = function()
-                        --                require("whleucka.config.notify")
-                        --            end
-                        --        },
-                        --    }
-                        --})
+    -- Fancy notifications
+    use {
+        "rcarriga/nvim-notify",
+        config = function()
+            require("whleucka.config.notify")
+        end
+    }
 
-                        -- Fancy notifications
-                        use {
-                            "rcarriga/nvim-notify",
-                            config = function()
-                                require("whleucka.config.notify")
-                            end
-                        }
+    -- Wildmenu
+    use {
+        'gelguy/wilder.nvim',
+        config = function()
+            require("whleucka.config.wilder")
+        end,
+    }
 
-                        -- Wildmenu
-                        use {
-                            'gelguy/wilder.nvim',
-                            config = function()
-                                require("whleucka.config.wilder")
-                            end,
-                        }
+    -- Barbar (buffers)
+    use {
+        'romgrk/barbar.nvim',
+        requires = "kyazdani42/nvim-web-devicons"
+    }
 
-                        -- Barbar (buffers)
-                        use {
-                            'romgrk/barbar.nvim',
-                            requires = "kyazdani42/nvim-web-devicons"
-                        }
+    -- Lualine status
+    use {
+        'nvim-lualine/lualine.nvim',
+        config = function()
+            require("whleucka.config.lualine")
+        end,
+        requires = {
+            'arkav/lualine-lsp-progress',
+            'kyazdani42/nvim-web-devicons', opt = true
+        }
+    }
 
-                        -- Lualine status
-                        use {
-                            'nvim-lualine/lualine.nvim',
-                            config = function()
-                                require("whleucka.config.lualine")
-                            end,
-                            requires = {
-                                'arkav/lualine-lsp-progress',
-                                'kyazdani42/nvim-web-devicons', opt = true
-                            }
-                        }
+    -- Neogit & Diffs
+    use { 'TimUntersberger/neogit',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim',
+        },
+        config = function()
+            require("whleucka.config.neogit")
+        end
+    }
 
-                        -- Neogit & Diffs
-                        use { 'TimUntersberger/neogit',
-                        requires = {
-                            'nvim-lua/plenary.nvim',
-                            'sindrets/diffview.nvim',
-                        },
-                        config = function()
-                            require("whleucka.config.neogit")
-                        end
-                    }
+    -- Profile
+    use { 'dstein64/vim-startuptime' }
 
-                    -- Profile
-                    use { 'dstein64/vim-startuptime' }
+    -- My plugins
+    use { 'whleucka/soprano.nvim',
+        requires = {
+            "akinsho/toggleterm.nvim"
+        }
+    }
 
-                    -- My plugins
-                    use { 'whleucka/soprano.nvim',
-                    requires = {
-                        "akinsho/toggleterm.nvim"
-                    }
-                }
-
-                -- Automatically set up the configuration after cloning packer.nvim
-                if PACKER_BOOTSTRAP then
-                    require("packer").sync()
-                end
-            end,
-            config = {
-                display = {
-                    open_fn = function()
-                        -- Open in a floating window
-                        return require('packer.util').float({ border = 'single' })
-                    end
-                }
-            } })
+    -- Automatically set up the configuration after cloning packer.nvim
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
+end,
+    config = {
+        display = {
+            open_fn = function()
+                -- Open in a floating window
+                return require('packer.util').float({ border = 'single' })
+            end
+        }
+    } })
