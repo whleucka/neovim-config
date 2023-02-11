@@ -25,18 +25,8 @@ end
 
 
 return packer.startup({ function(use)
-    -- My custom plugins
-
     -- Packer can manage itself
     use "wbthomason/packer.nvim"
-
-    -- Dressing
-    use {
-        "stevearc/dressing.nvim",
-        config = function()
-            require("whleucka.config.dressing")
-        end,
-    }
 
     -- Improve startup time
     use "lewis6991/impatient.nvim"
@@ -92,14 +82,6 @@ return packer.startup({ function(use)
         "akinsho/toggleterm.nvim", tag = 'v2.*',
         config = function()
             require("toggleterm").setup()
-        end
-    }
-
-    -- Mini stuff (enable different modules)
-    use {
-        'echasnovski/mini.nvim',
-        config = function()
-            require("whleucka.config.mini")
         end
     }
 
