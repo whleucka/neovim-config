@@ -9,9 +9,9 @@ local day_n_night = function()
     local sun_up = t.isdst and 6 or 8
     local sun_down = t.isdst and 20 or 16
     if hour >= sun_up and hour <= sun_down then
-        -- day is a bit bright, so I will default on moon
+        -- day is a bit bright, so I will default on moon or storm
         -- return "day"
-        return "moon"
+        return "storm"
     end
     return "night"
 end
