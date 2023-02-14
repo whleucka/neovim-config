@@ -191,6 +191,13 @@ return packer.startup({ function(use)
     -- Profile
     use { 'dstein64/vim-startuptime' }
 
+    -- Colours
+    use { 'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('colorizer').setup()
+        end
+    }
+
     -- My plugins
     use { 'whleucka/soprano.nvim',
         requires = {
