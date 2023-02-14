@@ -198,6 +198,10 @@ return packer.startup({ function(use)
         end
     }
 
+    -- Tpope
+    use { 'tpope/vim-surround' }
+    use { 'tpope/vim-commentary' }
+
     -- My plugins
     use { 'whleucka/soprano.nvim',
         requires = {
