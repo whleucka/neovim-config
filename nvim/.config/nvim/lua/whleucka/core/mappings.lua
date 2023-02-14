@@ -62,9 +62,6 @@ xnoremap(">", ">gv")
 -- Quickfix lists
 nnoremap("q[", "<cmd>cprevious<CR>zz")
 nnoremap("q]", "<cmd>cnext<CR>zz")
--- Location lists
-nnoremap("l[", "<cmd>lprevious<CR>zz")
-nnoremap("l]", "<cmd>lnext<CR>zz")
 
 -- Keep it centered
 nnoremap("J", "mzJ`z") -- join lines fix
