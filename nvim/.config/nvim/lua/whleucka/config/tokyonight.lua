@@ -35,7 +35,7 @@ require("tokyonight").setup({
         -- Background styles. Can be "dark", "transparent" or "normal"
         --sidebars = background_style, -- style for sidebars, see below
         --floats = background_style, -- style for floating windows
-        sidebars = "dark",
+        sidebars = "transparent",
         floats = "dark",
     },
     sidebars = { "qf", "help", "terminal", "packer" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
