@@ -15,56 +15,36 @@ require("lazy").setup({
     -- Theme
     {
         "folke/tokyonight.nvim",
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             require("whleucka.config.tokyonight")
         end,
     },
 
-    -- Git signs
+    -- Error / Diagnostic Messages
     {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    },
-
-    -- LSP
-    {
-        'VonHeikemen/lsp-zero.nvim',
+        "folke/trouble.nvim",
         dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
-            { 'nvim-lua/lsp_extensions.nvim' },
-            { 'ray-x/lsp_signature.nvim',
-            config = function()
-                require("lsp_signature").setup {}
-            end },
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-buffer' },
-            { 'hrsh7th/cmp-path' },
-            { 'saadparwaiz1/cmp_luasnip' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
-
-            -- Snippets
-            { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
-
-            -- VScode-like pictograms
-            { 'onsails/lspkind.nvim' }
-        }
-    },
-
-    -- Terminal
-    {
-        "akinsho/toggleterm.nvim", version = 'v2.*',
+            "folke/lsp-colors.nvim",
+            "kyazdani42/nvim-web-devicons"
+        },
         config = function()
-            require("toggleterm").setup()
+            require("trouble").setup()
         end
     },
+
+    -- Which key
+    {
+        "folke/which-key.nvim",
+        config = function()
+            require("whleucka.config.whichkey")
+        end
+    },
+
+    -- Tpope
+    { 'tpope/vim-surround' },
+    { 'tpope/vim-commentary' },
 
     -- Telescope (pickers)
     {
@@ -104,23 +84,67 @@ require("lazy").setup({
         end
     },
 
-    -- Error / Diagnostic Messages
+    -- Barbar (buffers)
     {
-        "folke/trouble.nvim",
-        dependencies = {
-            "folke/lsp-colors.nvim",
-            "kyazdani42/nvim-web-devicons"
-        },
+        'romgrk/barbar.nvim',
+        dependencies = "kyazdani42/nvim-web-devicons"
+    },
+
+    -- Lualine status
+    {
+        'nvim-lualine/lualine.nvim',
         config = function()
-            require("trouble").setup()
+            require("whleucka.config.lualine")
+        end,
+        dependencies = {
+            'arkav/lualine-lsp-progress',
+            'kyazdani42/nvim-web-devicons',
+        }
+    },
+
+    -- LSP
+    {
+        'VonHeikemen/lsp-zero.nvim',
+        dependencies = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
+            { 'nvim-lua/lsp_extensions.nvim' },
+            { 'ray-x/lsp_signature.nvim',
+            config = function()
+                require("lsp_signature").setup {}
+            end },
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
+
+            -- Snippets
+            { 'L3MON4D3/LuaSnip' },
+            { 'rafamadriz/friendly-snippets' },
+
+            -- VScode-like pictograms
+            { 'onsails/lspkind.nvim' }
+        }
+    },
+
+    -- Git signs
+    {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
         end
     },
 
-    -- Which key
+    -- Terminal
     {
-        "folke/which-key.nvim",
+        "akinsho/toggleterm.nvim", version = 'v2.*',
         config = function()
-            require("whleucka.config.whichkey")
+            require("toggleterm").setup()
         end
     },
 
@@ -140,53 +164,31 @@ require("lazy").setup({
         end,
     },
 
-    -- Barbar (buffers)
-    {
-        'romgrk/barbar.nvim',
-        dependencies = "kyazdani42/nvim-web-devicons"
-    },
-
-    -- Lualine status
-    {
-        'nvim-lualine/lualine.nvim',
-        config = function()
-            require("whleucka.config.lualine")
-        end,
-        dependencies = {
-            'arkav/lualine-lsp-progress',
-            'kyazdani42/nvim-web-devicons',
-        }
-    },
-
     -- Neogit & Diffs
-    { 'TimUntersberger/neogit',
-    dependencies = {
-        'nvim-lua/plenary.nvim',
-        'sindrets/diffview.nvim',
-    },
-    config = function()
-        require("whleucka.config.neogit")
-    end
-},
-
--- Profile
-{ 'dstein64/vim-startuptime' },
-
--- Colours
-{ 'norcalli/nvim-colorizer.lua',
-config = function()
-    require('colorizer').setup()
-end
+    {
+        'TimUntersberger/neogit',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim',
+        },
+        config = function()
+            require("whleucka.config.neogit")
+        end
     },
 
-    -- Tpope
-    { 'tpope/vim-surround' },
-    { 'tpope/vim-commentary' },
+    -- Colours
+    {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('colorizer').setup()
+        end
+    },
 
     -- My plugins
-    { 'whleucka/soprano.nvim',
-    dependencies = {
-        "akinsho/toggleterm.nvim"
+    {
+        'whleucka/soprano.nvim',
+        dependencies = {
+            "akinsho/toggleterm.nvim"
+        }
     },
-}
 })
