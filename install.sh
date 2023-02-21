@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Installs neovim config
 
 INSTALL_PATH=$HOME/.neovim-config
 
@@ -13,7 +14,7 @@ git_warning() {
 }
 
 rename_dir() {
-	mv $HOME/.config/nvim $HOME/.config/nvim.old
+	mv "$HOME/.config/nvim" "$HOME/.config/nvim.old"
 	printf "Your neovig config has been transfered to ~/.config/nvim.old\n"
 	clone
 }
@@ -28,18 +29,12 @@ symlink() {
 	ln -s "$INSTALL_PATH/nvim/.config/nvim" "$HOME/.config"
 }
 
-install_packer() {
-	printf "Installing packer...\n"
-	git clone --depth 1 https://github.com/wbthomason/packer.nvim "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
-}
-
 # Make sure deps exists
-which nvim >/dev/null && (printf "Neovim is installed\n" && sleep 1) || nvim_warning
-which git >/dev/null && (printf "Git is installed\n" && sleep 1) || git_warning
+(which nvim >/dev/null && (printf "Neovim is installed\n" && sleep 1)) || nvim_warning
+(which git >/dev/null && (printf "Git is installed\n" && sleep 1)) || git_warning
 
 # Check paths + hooks
-[ -d "$HOME/.config/nvim" ] && rename_dir || clone
-[ ! -d "$HOME/.local/share/nvim/site/pack/packer" ] && install_packer
+([ -d "$HOME/.config/nvim" ] && rename_dir) || clone
 [ -d "$INSTALL_PATH" ] && symlink
 
 # Packer
