@@ -89,7 +89,7 @@ require("lazy").setup({
         },
         version = 'nightly',
         config = function()
-            require("whleucka.config.tree")
+            require("whleucka.config.nvim-tree")
         end
     },
 

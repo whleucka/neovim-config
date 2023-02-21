@@ -4,6 +4,7 @@
 --
 -- An excellent plugin collection
 -- Spared no expense.
+--
 -- Nvim options
 require("whleucka.core.options")
 -- Plugins
