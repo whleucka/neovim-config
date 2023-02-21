@@ -39,7 +39,7 @@ symlink() {
 
 # Packer
 printf "Installing plugins...\n" && sleep 1
-$(which nvim) --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+$(which nvim) --headless "+Lazy! sync" +qa
 
 printf "\n\nYou have successfully installed neovim-config, have a great day!\n"
-cd -
+cd - || exit 0
