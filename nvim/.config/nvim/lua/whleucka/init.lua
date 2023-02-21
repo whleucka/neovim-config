@@ -4,13 +4,10 @@
 --
 -- An excellent plugin collection
 -- Spared no expense.
---
--- Lazy load plugins
-require("impatient")
---require("impatient").enable_profile()
-require("whleucka.core.plugins")
 -- Nvim options
 require("whleucka.core.options")
+-- Plugins
+require("whleucka.core.plugins")
 -- Key mappings
 require("whleucka.core.mappings")
 -- LSP configuration

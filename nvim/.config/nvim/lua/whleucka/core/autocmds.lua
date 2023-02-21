@@ -25,14 +25,6 @@ vim.api.nvim_create_autocmd("BufRead", {
     command = [[call setpos(".", getpos("'\""))]]
 })
 
-local packer_sync = vim.api.nvim_create_augroup("PackerSyncIt", {clear = true})
-vim.api.nvim_create_autocmd("BufWritePost", {
-    desc = "Auto save plugins",
-    group = packer_sync,
-    pattern = 'plugins.lua',
-    command = "source <afile> | PackerSync"
-})
-
 local leave = vim.api.nvim_create_augroup("LeaveIt", {clear = true})
 vim.api.nvim_create_autocmd("VimLeave", {
     desc = "Set cursor position on exit",
