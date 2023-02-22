@@ -7,6 +7,16 @@ curl -s https://raw.githubusercontent.com/whleucka/neovim-config/main/install.sh
 ```
 
 ### Uninstall
+If you have stow installed on your machine:
+```
+cd ~/.neovim-config && stow -D nvim
+```
+or, just unlink:
 ```
 unlink $HOME/.config/nvim
+```
+
+If you replaced an existing Neovim config, then you can restore it:
+```
+mv $HOME/.config/nvim.old $HOME/.config/nvim
 ```
