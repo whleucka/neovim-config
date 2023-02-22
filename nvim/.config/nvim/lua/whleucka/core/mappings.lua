@@ -8,8 +8,7 @@ local tmap = require("whleucka.core.remap").tmap
 -- Avoid Ex mode
 nnoremap("Q", "<nop>")
 -- Other annoying things
-nnoremap("<Enter>", "<cmd>noh<CR><cmd> lua require('notify').dismiss()<CR>")
-nnoremap("<Esc>", "<Enter>")
+nnoremap("<Esc>", "<cmd>noh<CR><cmd> lua require('notify').dismiss()<CR>")
 inoremap('jk', '<C-c>')
 inoremap('kj', '<C-c>')
 
@@ -21,13 +20,12 @@ nnoremap("<C-p>", "<cmd>Telescope git_files<cr>")
 
 -- Break undo sequence
 inoremap("$", "$<C-g>u")
-inoremap(",", ",<C-g>u")
 inoremap("(", "(<C-g>u")
 inoremap(")", ")<C-g>u")
 inoremap("[", "[<C-g>u")
 inoremap("]", "]<C-g>u")
-inoremap("-", "-<C-g>u")
-inoremap("_", "_<C-g>u")
+inoremap(",", "-<C-g>u")
+inoremap(".", "_<C-g>u")
 inoremap(";", ";<C-g>u")
 
 -- Terminal

@@ -5,8 +5,10 @@
 -- An excellent plugin collection
 -- Spared no expense.
 --
--- Plugins
+-- Map leader
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+-- Plugins
 require("whleucka.core.lazy")
 -- Nvim options
 require("whleucka.core.options")
