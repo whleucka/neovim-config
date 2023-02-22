@@ -2,8 +2,8 @@ return {
     -- Theme
     {
         "folke/tokyonight.nvim",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
+        lazy = false,
+        priority = 1000,
         config = function()
             require("whleucka.config.tokyonight")
         end,
@@ -16,6 +16,7 @@ return {
     -- Error / Diagnostic Messages
     {
         "folke/trouble.nvim",
+        event = "BufReadPre",
         dependencies = {
             "folke/lsp-colors.nvim",
             "kyazdani42/nvim-web-devicons"
@@ -28,6 +29,7 @@ return {
     -- Which key
     {
         "folke/which-key.nvim",
+        event = "CursorHold",
         config = function()
             require("whleucka.config.whichkey")
         end
@@ -40,6 +42,7 @@ return {
     -- Telescope (pickers)
     {
         'nvim-telescope/telescope.nvim', version = '0.1.0',
+        event = "CursorHold",
         dependencies = {
             { 'nvim-lua/plenary.nvim' },
             {
@@ -55,8 +58,9 @@ return {
     -- Nvim Tree (file navigation)
     {
         'kyazdani42/nvim-tree.lua',
+        event = "CursorHold",
         dependencies = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icons
+            'kyazdani42/nvim-web-devicons',
         },
         version = 'nightly',
         config = function()
@@ -67,6 +71,7 @@ return {
     -- Treesitter (syntax)
     {
         'nvim-treesitter/nvim-treesitter',
+        lazy = false,
         dependencies = {
             'JoosepAlviste/nvim-ts-context-commentstring'
         },
@@ -80,12 +85,14 @@ return {
 
     -- Barbar (buffers)
     {
+        event = "CursorHold",
         'romgrk/barbar.nvim',
         dependencies = "kyazdani42/nvim-web-devicons"
     },
 
     -- Lualine status
     {
+        event = "CursorHold",
         'nvim-lualine/lualine.nvim',
         config = function()
             require("whleucka.config.lualine")
@@ -99,6 +106,7 @@ return {
     -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
+        event = "BufReadPre",
         dependencies = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
@@ -129,6 +137,7 @@ return {
     -- Git signs
     {
         'lewis6991/gitsigns.nvim',
+        event = "BufReadPre",
         config = function()
             require('gitsigns').setup()
         end
@@ -137,6 +146,7 @@ return {
     -- Terminal
     {
         "akinsho/toggleterm.nvim", version = 'v2.*',
+        event = "CursorHold",
         config = function()
             require("toggleterm").setup()
         end
@@ -145,6 +155,7 @@ return {
     -- Fancy notifications
     {
         "rcarriga/nvim-notify",
+        event = "CursorHold",
         config = function()
             require("whleucka.config.notify")
         end
@@ -153,6 +164,7 @@ return {
     -- Wildmenu
     {
         'gelguy/wilder.nvim',
+        event = "CursorHold",
         config = function()
             require("whleucka.config.wilder")
         end,
@@ -161,6 +173,7 @@ return {
     -- Neogit & Diffs
     {
         'TimUntersberger/neogit',
+        event = "BufReadPre",
         dependencies = {
             'nvim-lua/plenary.nvim',
             'sindrets/diffview.nvim',
@@ -173,6 +186,7 @@ return {
     -- Colours
     {
         'norcalli/nvim-colorizer.lua',
+        event = "BufReadPre",
         config = function()
             require('colorizer').setup()
         end
@@ -181,6 +195,7 @@ return {
     -- My plugins
     {
         'whleucka/soprano.nvim',
+        lazy = true,
         dependencies = {
             "akinsho/toggleterm.nvim"
         }
