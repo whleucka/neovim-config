@@ -70,7 +70,7 @@ wk.register({
         ['td'] = { "<cmd> TroubleToggle document_diagnostics<cr>", "Document" },
         t = { "<cmd> TroubleToggle<cr>", "Trouble" },
     },
-    s = {
+    p = {
         name = "LSP",
         a = { function() vim.lsp.buf.code_action() end, "Code Action" },
         f = { function() vim.lsp.buf.format {async = true} end, "Format" },

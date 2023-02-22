@@ -1,5 +1,5 @@
--- Nvim Tree position fixes
 vim.api.nvim_create_autocmd('BufWinEnter', {
+    desc = "NvimTree",
     pattern = '*',
     callback = function()
         if vim.bo.filetype == 'NvimTree' then
@@ -9,12 +9,21 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 })
 
 vim.api.nvim_create_autocmd('BufWinLeave', {
+    desc = "NvimTree",
     pattern = '*',
     callback = function()
         if vim.fn.expand('<afile>'):match('NvimTree') then
             require'bufferline.api'.set_offset(0)
         end
     end
+})
+
+local update_plugs = vim.api.nvim_create_augroup("UpdatePlugins", {clear = true})
+vim.api.nvim_create_autocmd("BufWritePost", {
+    desc = "Update Lazy plugins on plugins save",
+    group = update_plugs,
+    pattern = "plugins.lua",
+    command = "Lazy sync"
 })
 
 local save_pos = vim.api.nvim_create_augroup("SaveIt", {clear = true})
