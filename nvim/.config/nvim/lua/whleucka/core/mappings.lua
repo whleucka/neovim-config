@@ -24,8 +24,8 @@ inoremap("(", "(<C-g>u")
 inoremap(")", ")<C-g>u")
 inoremap("[", "[<C-g>u")
 inoremap("]", "]<C-g>u")
-inoremap(",", "-<C-g>u")
-inoremap(".", "_<C-g>u")
+inoremap(",", ",<C-g>u")
+inoremap(".", ".<C-g>u")
 inoremap(";", ";<C-g>u")
 
 -- Terminal
