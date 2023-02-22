@@ -8,7 +8,7 @@
 -- Nvim options
 require("whleucka.core.options")
 -- Plugins
-require("whleucka.core.plugins")
+require("whleucka.core.lazy")
 -- Key mappings
 require("whleucka.core.mappings")
 -- LSP configuration

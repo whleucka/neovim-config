@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
     pattern = '*',
     callback = function()
         if vim.bo.filetype == 'NvimTree' then
-            require'bufferline.api'.set_offset(30, 'FileTree')
+            require'bufferline.api'.set_offset(31, 'FileTree')
         end
     end
 })
@@ -18,13 +18,13 @@ vim.api.nvim_create_autocmd('BufWinLeave', {
     end
 })
 
-local update_plugs = vim.api.nvim_create_augroup("UpdatePlugins", {clear = true})
-vim.api.nvim_create_autocmd("BufWritePost", {
-    desc = "Update Lazy plugins on plugins save",
-    group = update_plugs,
-    pattern = "plugins.lua",
-    command = "Lazy sync"
-})
+--local update_plugs = vim.api.nvim_create_augroup("UpdatePlugins", {clear = true})
+--vim.api.nvim_create_autocmd("BufWritePost", {
+--    desc = "Update Lazy plugins on plugins save",
+--    group = update_plugs,
+--    pattern = "plugins.lua",
+--    command = "source <afile> | Lazy sync"
+--})
 
 local save_pos = vim.api.nvim_create_augroup("SaveIt", {clear = true})
 vim.api.nvim_create_autocmd("BufRead", {
