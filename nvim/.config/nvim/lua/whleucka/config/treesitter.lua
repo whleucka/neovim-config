@@ -20,6 +20,7 @@ require 'nvim-treesitter.configs'.setup {
         "vim",
         "regex",
     },
+    context_commentstring = { enable = true, enable_autocmd = false },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
     -- Automatically install missing parsers when entering buffer
@@ -29,9 +30,7 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
         additional_vim_regex_highlighting = { "php" }
     },
-    indent = {
-        enable = true
-    },
+    indent = { enable = true, disable = { "python" } },
     incremental_selection = {
         enable = true,
         keymaps = {
