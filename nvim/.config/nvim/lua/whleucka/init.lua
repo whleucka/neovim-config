@@ -5,10 +5,11 @@
 -- An excellent plugin collection
 -- Spared no expense.
 --
+-- Plugins
+vim.g.mapleader = " "
+require("whleucka.core.lazy")
 -- Nvim options
 require("whleucka.core.options")
--- Plugins
-require("whleucka.core.lazy")
 -- Key mappings
 require("whleucka.core.mappings")
 -- LSP configuration

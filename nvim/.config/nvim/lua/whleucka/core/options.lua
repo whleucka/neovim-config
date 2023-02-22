@@ -1,6 +1,3 @@
--- Leader & Globals
-vim.g.mapleader = " "
-
 -- Encoding
 vim.opt.encoding = "utf-8"
 
@@ -66,7 +63,6 @@ vim.opt.smartcase = true
 vim.opt.showmatch = true
 
 -- Colours / Display
-vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.hidden = true
 vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }

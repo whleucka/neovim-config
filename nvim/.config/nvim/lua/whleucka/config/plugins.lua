@@ -7,6 +7,10 @@ return {
         config = function()
             require("whleucka.config.tokyonight")
         end,
+        init = function()
+            vim.opt.termguicolors = true
+            vim.cmd [[colorscheme tokyonight]]
+        end
     },
 
     -- Error / Diagnostic Messages
