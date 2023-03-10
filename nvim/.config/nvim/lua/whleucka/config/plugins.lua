@@ -109,7 +109,15 @@ return {
         event = "BufReadPre",
         dependencies = {
             -- LSP Support
-            { 'neovim/nvim-lspconfig' },
+            { 'neovim/nvim-lspconfig',
+               dependencies = {
+                    { 'MunifTanjim/prettier.nvim',
+                        config = function()
+                            require("whleucka.config.prettier")
+                        end
+                    }
+                }
+            },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
             { 'nvim-lua/lsp_extensions.nvim' },

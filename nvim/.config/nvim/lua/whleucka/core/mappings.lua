@@ -15,6 +15,10 @@ inoremap('kj', '<C-c>')
 -- Soprano search (music)
 --nnoremap("<leader>ss", "<cmd>lua require('soprano').search()<cr>")
 
+-- Format
+nnoremap("<C-f>", "<cmd>Prettier<cr>")
+xnoremap("<C-f>", "<cmd>Prettier<cr>")
+
 -- Find git files
 nnoremap("<C-p>", "<cmd>Telescope git_files<cr>")
 
