@@ -16,6 +16,9 @@ vim.opt.spellsuggest = "best,9"
 -- Command height
 vim.opt.cmdheight = 0
 
+-- Winbar
+vim.opt.winbar = "%= %m %f"
+
 -- Show eol char
 --vim.opt.list = true
 --vim.opt.listchars:append "space:⋅"

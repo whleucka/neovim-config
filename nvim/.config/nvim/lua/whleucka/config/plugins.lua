@@ -42,7 +42,6 @@ return {
     -- Telescope (pickers)
     {
         'nvim-telescope/telescope.nvim', version = '0.1.0',
-        event = "CursorHold",
         dependencies = {
             { 'nvim-lua/plenary.nvim' },
             {
@@ -132,6 +131,26 @@ return {
             -- VScode-like pictograms
             { 'onsails/lspkind.nvim' }
         }
+    },
+
+    -- DAP
+    {
+        "mfussenegger/nvim-dap",
+        opt = true,
+        event = "BufReadPre",
+        module = { "dap" },
+        dependencies = {
+            "theHamsta/nvim-dap-virtual-text",
+            "rcarriga/nvim-dap-ui",
+            "mfussenegger/nvim-dap-python",
+            "nvim-telescope/telescope-dap.nvim",
+            "mfussenegger/nvim-dap-python",
+            { "leoluz/nvim-dap-go", module = "dap-go" },
+            { "jbyuki/one-small-step-for-vimkind", module = "osv" },
+        },
+        config = function()
+            require("whleucka.core.dap").setup()
+        end,
     },
 
     -- Git signs

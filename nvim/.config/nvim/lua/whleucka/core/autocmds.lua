@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd('BufWinLeave', {
 --    desc = "Update Lazy plugins on plugins save",
 --    group = update_plugs,
 --    pattern = "plugins.lua",
---    command = "source <afile> | Lazy sync"
+--    command = "\%s <afile> | Lazy sync"
 --})
 
 local save_pos = vim.api.nvim_create_augroup("SaveIt", {clear = true})

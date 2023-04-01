@@ -9,7 +9,7 @@ local day_n_night = function()
     local sun_up = t.isdst and 6 or 8
     local sun_down = t.isdst and 20 or 16
     if hour >= sun_up and hour <= sun_down then
-        return "day"
+        return "storm"
     end
     return "night"
 end
@@ -20,8 +20,8 @@ local background_style = day_or_night == "day" and "normal" or "dark"
 require("tokyonight").setup({
     -- your configuration comes here
     -- or leave it empty to use the default settings
-    --style = day_or_night, -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-    style = "night",
+    style = day_or_night, -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+    --style = "night",
     light_style = "day", -- The theme is used when the background is set to light
     transparent = false, -- Enable this to disable setting the background color
     terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim

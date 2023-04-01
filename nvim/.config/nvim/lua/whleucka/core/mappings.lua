@@ -13,7 +13,7 @@ inoremap('jk', '<C-c>')
 inoremap('kj', '<C-c>')
 
 -- Soprano search (music)
---nnoremap("<leader>ss", "<cmd>lua require('soprano').search()<cr>")
+--nnoremap("<F10>", "<cmd>lua require('soprano').search()<cr>")
 
 -- Find git files
 nnoremap("<C-p>", "<cmd>Telescope git_files<cr>")
@@ -40,10 +40,9 @@ nnoremap("<A-Down>", ":resize +2<CR>")
 nnoremap("<A-Up>", ":resize -2<CR>")
 nnoremap("<A-Left>", ":vertical resize +2<CR>")
 nnoremap("<A-Right>", ":vertical resize -2<CR>")
-
--- Line movements
-nnoremap("<leader>h", "^")
-nnoremap("<leader>l", "$")
+-- Create splits
+nnoremap("<C-->", ":sp<cr>")
+nnoremap("<C-=>", ":vs<cr>")
 -- Quick tab movements
 nnoremap("H", "<cmd>BufferPrevious<cr>")
 nnoremap("L", "<cmd>BufferNext<cr>")
