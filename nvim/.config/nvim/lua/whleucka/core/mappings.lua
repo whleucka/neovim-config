@@ -32,25 +32,35 @@ function _G.set_terminal_keymaps()
 end
 
 -- Resize splits
-nnoremap("<A-Down>", ":resize +2<CR>")
-nnoremap("<A-Up>", ":resize -2<CR>")
-nnoremap("<A-Left>", ":vertical resize +2<CR>")
-nnoremap("<A-Right>", ":vertical resize -2<CR>")
+nnoremap("<A-Down>", ":resize +1<cr>")
+nnoremap("<A-Up>", ":resize -1<cr>")
+nnoremap("<A-Left>", ":vertical resize +1<cr>")
+nnoremap("<A-Right>", ":vertical resize -1<cr>")
+
 -- Create splits
 nnoremap("<C-->", ":sp<cr>")
 nnoremap("<C-=>", ":vs<cr>")
+
 -- Quick tab movements
 nnoremap("H", "<cmd>BufferPrevious<cr>")
 nnoremap("L", "<cmd>BufferNext<cr>")
+
 -- Improve movements on wrapped lines
 nnoremap("j", "gj")
 nnoremap("k", "gk")
+
+-- Paste over currently selected text wihtout yanking it
+vnoremap("p", '"_dP')
 
 -- Reselect visual when indenting
 vnoremap("<", "<gv")
 xnoremap("<", "<gv")
 vnoremap(">", ">gv")
 xnoremap(">", ">gv")
+
+-- Move selected line / block of text
+xnoremap("K", ":move '<-2<CR>gv-gv")
+xnoremap("J", ":move '>+1<CR>gv-gv")
 
 -- Quickfix lists
 nnoremap("q[", "<cmd>cprevious<CR>zz")
