@@ -6,7 +6,6 @@ wk.register({
     e = { "<cmd> NvimTreeToggle<cr>", "Toggle NvimTree" },
     o = { "<cmd> NvimTreeFocus<cr>", "Focus NvimTree" },
     q = { "<cmd> q<cr>", "Quit Buffer" },
-    Q = { "<cmd> qall<cr>", "Quit All Buffers" },
     w = { "<cmd> update!<cr>", "Write Buffer" },
     x = { "<cmd> qall<cr>", "Quit All Buffers" },
     h = { "<C-w>h", "Move to Split (left)" },
