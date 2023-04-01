@@ -111,3 +111,16 @@ wk.register({
         i = {"<cmd>LspInfo<cr>", "LSP Info" },
     }
 }, { prefix = "<leader>" })
+
+local keymap_v = {
+    name = "Debug",
+    e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
+}
+wk.register(keymap_v, {
+    mode = "v",
+    prefix = "<leader>",
+    buffer = nil,
+    silent = true,
+    noremap = true,
+    nowait = false,
+})
