@@ -1,5 +1,6 @@
 local wk = require("which-key")
 
+
 wk.register({
     c = { "<cmd> BufferClose<cr>", "Close Buffer" },
     e = { "<cmd> NvimTreeToggle<cr>", "Toggle NvimTree" },
@@ -39,10 +40,8 @@ wk.register({
     },
     m = {
         name = "Mason",
-        i = { "<cmd> MasonInstall<cr>", "Install" },
         l = { "<cmd> MasonLog<cr>", "Log" },
         m = { "<cmd> Mason<cr>", "Mason" },
-        u = { "<cmd> MasonUninstall<cr>", "Uninstall" },
     },
     g = {
         name = "Git",
