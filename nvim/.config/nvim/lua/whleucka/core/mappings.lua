@@ -20,10 +20,6 @@ nnoremap("<C-p>", "<cmd>Telescope git_files<cr>")
 
 -- Break undo sequence
 inoremap("$", "$<C-g>u")
-inoremap("(", "(<C-g>u")
-inoremap(")", ")<C-g>u")
-inoremap("[", "[<C-g>u")
-inoremap("]", "]<C-g>u")
 inoremap(",", ",<C-g>u")
 inoremap(".", ".<C-g>u")
 inoremap(";", ";<C-g>u")
