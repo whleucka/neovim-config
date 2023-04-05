@@ -15,7 +15,7 @@ wk.register({
     [','] = { "^", "Move to Beginning of Line" },
     ['.'] = { "$", "Move to End of Line" },
     d = {
-      name = "Debug",
+      name = "Diagnostics",
       R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
       E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
       C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", "Conditional Breakpoint" },
@@ -79,7 +79,7 @@ wk.register({
         ['8'] = { "<cmd>BufferGoto 8<cr>", "Goto Buffer 8" },
         ['9'] = { "<cmd>BufferGoto 9<cr>", "Goto Buffer 9" },
     },
-    y = {
+    z = {
         name = "Lazy",
         c = { "<cmd> Lazy clean<cr>", "Clean" },
         i = { "<cmd> Lazy install<cr>", "Install" },
