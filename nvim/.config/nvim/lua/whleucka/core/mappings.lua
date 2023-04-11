@@ -37,10 +37,6 @@ nnoremap("<A-Up>", ":resize -1<cr>")
 nnoremap("<A-Left>", ":vertical resize +1<cr>")
 nnoremap("<A-Right>", ":vertical resize -1<cr>")
 
--- Create splits
-nnoremap("<C-->", ":sp<cr>")
-nnoremap("<C-=>", ":vs<cr>")
-
 -- Quick tab movements
 nnoremap("H", "<cmd>BufferPrevious<cr>")
 nnoremap("L", "<cmd>BufferNext<cr>")

@@ -12,6 +12,8 @@ wk.register({
     j = { "<C-w>j", "Move to Split (down)" },
     k = { "<C-w>k", "Move to Split (up)" },
     l = { "<C-w>l" , "Move to Split (down)" },
+    ['-'] = { "<cmd>sp<cr>", "Split screen horizontally" },
+    ['='] = { "<cmd>vs<cr>", "Split screen veritcally" },
     [','] = { "^", "Move to Beginning of Line" },
     ['.'] = { "$", "Move to End of Line" },
     d = {
