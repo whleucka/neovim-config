@@ -1,9 +1,6 @@
 #!/usr/bin/env zsh
 
-PACKER_COMP=./nvim/.config/nvim/plugin/packer_compiled.lua
+LAZY_LOCK=nvim/.config/nvim/lazy-lock.json
 
-if [[ -f "$PACKER_COMP" ]]; then
-    rm $PACKER_COMP
-fi
-
+[ -f "$LAZY_LOCK" ] && git checkout $LAZY_LOCK
 git pull
