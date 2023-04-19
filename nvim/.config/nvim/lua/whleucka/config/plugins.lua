@@ -29,7 +29,6 @@ return {
     -- Which key
     {
         "folke/which-key.nvim",
-        event = "CursorHold",
         config = function()
             require("whleucka.config.whichkey")
         end
@@ -151,6 +150,26 @@ return {
         config = function()
             require("whleucka.core.dap").setup()
         end,
+    },
+
+    -- Testing
+    {
+        "nvim-neotest/neotest",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            "olimorris/neotest-phpunit",
+            "nvim-neotest/neotest-python",
+        },
+        config = function()
+            require('neotest').setup({
+                adapters = {
+                    require('neotest-phpunit'),
+                    require('neotest-python')
+                }
+            })
+        end
     },
 
     -- Git signs

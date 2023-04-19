@@ -1,6 +1,5 @@
 local wk = require("which-key")
 
-
 wk.register({
     c = { "<cmd> BufferClose<cr>", "Close Buffer" },
     e = { "<cmd> NvimTreeToggle<cr>", "Toggle NvimTree" },
@@ -39,6 +38,15 @@ wk.register({
       x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
       u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
     },
+    t = {
+        name="Test",
+        t = { "<cmd> lua require('neotest').run.run()<CR>", "Test single method" },
+        f = { "<cmd> lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Test file" },
+        T = { "<cmd> lua require('neotest').run.run({ suite = true })<CR>", "Test suite" },
+        S = { "<cmd> lua require('neotest').run.stop()<CR>", "Stop the nearest test" },
+        o = { "<cmd> lua require('neotest').output_panel.toggle({ enter = true })<CR>", "Toggle test output" },
+        s = { "<cmd> lua require('neotest').summary.toggle({ enter = true })<CR>", "Toggle test summary" },
+    },
     m = {
         name = "Mason",
         l = { "<cmd> MasonLog<cr>", "Log" },
@@ -48,7 +56,7 @@ wk.register({
         name = "Git",
         s = { "<cmd> Neogit kind=split<cr>", "Neogit" },
     },
-    t = {
+    T = {
         name = "Terminal",
         ['\\'] = { "<cmd> ToggleTerm direction=float<cr>", "Floating" },
         b = { "<cmd> lua require('whleucka.core.terminal').bpytop_toggle()<cr>", "Open bpytop" },
@@ -110,7 +118,7 @@ wk.register({
         p = {"<cmd>LspStop<cr>", "LSP Stop" },
         i = {"<cmd>LspInfo<cr>", "LSP Info" },
     }
-}, { prefix = "<leader>" })
+}, { prefix = "<leader>"} )
 
 local keymap_v = {
     name = "Debug",
