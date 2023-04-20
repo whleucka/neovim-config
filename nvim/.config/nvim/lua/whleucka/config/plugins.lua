@@ -16,7 +16,7 @@ return {
     -- Error / Diagnostic Messages
     {
         "folke/trouble.nvim",
-        event = "BufReadPre",
+        event = "CursorHold",
         dependencies = {
             "folke/lsp-colors.nvim",
             "kyazdani42/nvim-web-devicons"
@@ -29,18 +29,24 @@ return {
     -- Which key
     {
         "folke/which-key.nvim",
+        event = "CursorHold",
         config = function()
             require("whleucka.config.whichkey")
         end
     },
 
     -- Tpope
-    { 'tpope/vim-surround' },
-    { 'tpope/vim-commentary' },
+    { "tpope/vim-surround",
+        event = "CursorHold",
+    },
+    { 'tpope/vim-commentary',
+        event = "CursorHold",
+    },
 
     -- Telescope (pickers)
     {
         'nvim-telescope/telescope.nvim', version = '0.1.0',
+        event = "CursorHold",
         dependencies = {
             { 'nvim-lua/plenary.nvim' },
             {
@@ -56,7 +62,7 @@ return {
     -- Nvim Tree (file navigation)
     {
         'kyazdani42/nvim-tree.lua',
-        lazy = false,
+        event = "CursorHold",
         dependencies = {
             'kyazdani42/nvim-web-devicons',
         },
@@ -69,7 +75,6 @@ return {
     -- Treesitter (syntax)
     {
         'nvim-treesitter/nvim-treesitter',
-        lazy = false,
         dependencies = {
             'JoosepAlviste/nvim-ts-context-commentstring'
         },
@@ -83,7 +88,7 @@ return {
 
     -- Barbar (buffers)
     {
-        event = "CursorHold",
+        event = "BufReadPre",
         'romgrk/barbar.nvim',
         dependencies = "kyazdani42/nvim-web-devicons"
     },
@@ -104,7 +109,7 @@ return {
     -- LSP
     {
         'VonHeikemen/lsp-zero.nvim',
-        event = "BufReadPre",
+        event = "CursorHold",
         dependencies = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
@@ -136,7 +141,7 @@ return {
     {
         "mfussenegger/nvim-dap",
         opt = true,
-        event = "BufReadPre",
+        event = "CursorHold",
         module = { "dap" },
         dependencies = {
             "theHamsta/nvim-dap-virtual-text",
@@ -155,7 +160,7 @@ return {
     -- Testing
     {
         "nvim-neotest/neotest",
-        lazy = false,
+        event = "BufReadPre",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
@@ -198,7 +203,7 @@ return {
     -- Wildmenu
     {
         'gelguy/wilder.nvim',
-        lazy = false,
+        event = "CursorHold",
         config = function()
             require("whleucka.config.wilder")
         end,
@@ -207,7 +212,7 @@ return {
     -- Neogit & Diffs
     {
         'TimUntersberger/neogit',
-        event = "BufReadPre",
+        event = "CursorHold",
         dependencies = {
             'nvim-lua/plenary.nvim',
             'sindrets/diffview.nvim',
@@ -220,18 +225,17 @@ return {
     -- Colours
     {
         'norcalli/nvim-colorizer.lua',
-        event = "BufReadPre",
+        event = "CursorHold",
         config = function()
             require('colorizer').setup()
         end
     },
 
     -- My plugins
-    {
-        'whleucka/soprano.nvim',
-        lazy = true,
-        dependencies = {
-            "akinsho/toggleterm.nvim"
-        }
-    },
+    -- {
+    --     'whleucka/soprano.nvim',
+    --     dependencies = {
+    --         "akinsho/toggleterm.nvim"
+    --     }
+    -- },
 }

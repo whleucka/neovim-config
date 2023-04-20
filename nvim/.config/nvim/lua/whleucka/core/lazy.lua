@@ -12,5 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    defaults = {
+        lazy = false
+    },
     spec = require("whleucka.config.plugins")
 })
