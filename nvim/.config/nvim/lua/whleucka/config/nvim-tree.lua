@@ -238,5 +238,5 @@ require("nvim-tree").setup({
             profile = false,
             watcher = false,
         },
- r  },
+   },
 })
