@@ -56,7 +56,7 @@ return {
     -- Nvim Tree (file navigation)
     {
         'kyazdani42/nvim-tree.lua',
-        event = "CursorHold",
+        lazy = false,
         dependencies = {
             'kyazdani42/nvim-web-devicons',
         },
@@ -155,6 +155,7 @@ return {
     -- Testing
     {
         "nvim-neotest/neotest",
+        lazy = false,
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
@@ -163,12 +164,7 @@ return {
             "nvim-neotest/neotest-python",
         },
         config = function()
-            require('neotest').setup({
-                adapters = {
-                    require('neotest-phpunit'),
-                    require('neotest-python')
-                }
-            })
+            require("whleucka.config.neotest")
         end
     },
 
@@ -202,7 +198,7 @@ return {
     -- Wildmenu
     {
         'gelguy/wilder.nvim',
-        event = "CursorHold",
+        lazy = false,
         config = function()
             require("whleucka.config.wilder")
         end,
