@@ -72,7 +72,7 @@ neotest.setup(
         },
         projects = {},
         quickfix = {
-            enabled = true,
+            enabled = false,
             open = true
         },
         run = {
