@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-LAZY_LOCK=nvim/.config/nvim/lazy-lock.json
+LAZY_LOCK=./nvim/.config/nvim/lazy-lock.json
 
 [ -f "$LAZY_LOCK" ] && git checkout $LAZY_LOCK
 git pull
