@@ -83,6 +83,7 @@ vim.opt.shortmess:append { W = true, I = true, c = true }
 
 -- Colour column
 vim.opt.colorcolumn = "80"
+vim.cmd[[highlight ColorColumn guibg=#272C41]]
 
 -- Popups
 vim.opt.pumblend = 10 -- Popup blend
