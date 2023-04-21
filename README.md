@@ -1,4 +1,7 @@
 # My neovim config
+![image](https://user-images.githubusercontent.com/71740767/233647041-d9168187-efe0-4f46-8856-8c6436ab0a2e.png)
+
+
 <img src="https://media.tenor.com/ETW2DDjY6z0AAAAd/spared-no-expense-jurassic-park.gif" alt='spared no expense'>
 
 ### Install
