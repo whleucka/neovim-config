@@ -56,7 +56,7 @@ wk.register({
         name = "Git",
         s = { "<cmd> Neogit kind=split<cr>", "Neogit" },
     },
-    T = {
+    ['\\'] = {
         name = "Terminal",
         ['\\'] = { "<cmd> ToggleTerm direction=float<cr>", "Floating" },
         b = { "<cmd> lua require('whleucka.core.terminal').bpytop_toggle()<cr>", "Open bpytop" },
@@ -64,6 +64,7 @@ wk.register({
         m = { "<cmd> lua require('whleucka.core.terminal').matrix_toggle()<cr>", "Open cmatrix" },
         n = { "<cmd> lua require('whleucka.core.terminal').ncdu_toggle()<cr>", "Open ncdu" },
         t = { "<cmd> lua require('whleucka.core.terminal').htop_toggle()<cr>", "Open htop" },
+        g = { "<cmd> lua require('whleucka.core.terminal').gpterm_toggle()<cr>", "Open gpterm" },
         v = { "<cmd> ToggleTerm direction=vertical size=60<cr>", "Vertical" },
     },
     f = {
