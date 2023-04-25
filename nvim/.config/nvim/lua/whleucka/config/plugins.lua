@@ -35,6 +35,15 @@ return {
         end
     },
 
+    {
+        "kwkarlwang/bufresize.nvim",
+        event = "CursorHold",
+        config = function()
+            require("bufresize").setup()
+        end
+    },
+
+
     -- Tpope
     { "tpope/vim-surround",
         event = "CursorHold",

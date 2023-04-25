@@ -32,10 +32,10 @@ function _G.set_terminal_keymaps()
 end
 
 -- Resize splits
-nnoremap("<A-Down>", ":resize +1<cr>")
-nnoremap("<A-Up>", ":resize -1<cr>")
-nnoremap("<A-Left>", ":vertical resize +1<cr>")
-nnoremap("<A-Right>", ":vertical resize -1<cr>")
+nnoremap("<Down>", ":resize +1<cr>")
+nnoremap("<Up>", ":resize -1<cr>")
+nnoremap("<Left>", ":vertical resize +1<cr>")
+nnoremap("<Right>", ":vertical resize -1<cr>")
 
 -- Quick tab movements
 nnoremap("H", "<cmd>BufferPrevious<cr>")
