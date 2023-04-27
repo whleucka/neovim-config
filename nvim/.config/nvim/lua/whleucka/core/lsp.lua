@@ -33,6 +33,12 @@ end
 
 local astro_settings = {
     preselect = cmp.PreselectMode.None,
+    sources = {
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+        { name = 'buffer',  keyword_length = 3 },
+        { name = 'luasnip', keyword_length = 2 },
+    },
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = lspkind.cmp_format({
@@ -109,6 +115,21 @@ local astro_settings = {
         }),
     },
 }
+
+-- Fix the vim.lsp.buf.hover empty response
+vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
+  config = config or {}
+  config.focus_id = ctx.method
+  if not (result and result.contents) then
+    return
+  end
+  local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+  markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
+  if vim.tbl_isempty(markdown_lines) then
+    return
+  end
+  return vim.lsp.util.open_floating_preview(markdown_lines, 'markdown', config)
+end
 
 local cmp_config = lsp.defaults.cmp_config(astro_settings)
 cmp.setup(cmp_config)
