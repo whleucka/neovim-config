@@ -34,10 +34,13 @@ end
 local astro_settings = {
     preselect = cmp.PreselectMode.None,
     sources = {
-        { name = 'path' },
-        { name = 'nvim_lsp' },
-        { name = 'buffer',  keyword_length = 3 },
-        { name = 'luasnip', keyword_length = 2 },
+        { name = 'path' },                     -- file paths
+        { name = 'nvim_lsp',               keyword_length = 3 }, -- from language server
+        { name = 'nvim_lsp_signature_help' },  -- display function signatures with current parameter emphasized
+        { name = 'nvim_lua',               keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
+        { name = 'buffer',                 keyword_length = 2 }, -- source current buffer
+        { name = 'vsnip',                  keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
+        { name = 'calc' },                     -- source for math calculation
     },
     formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -118,17 +121,17 @@ local astro_settings = {
 
 -- Fix the vim.lsp.buf.hover empty response
 vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
-  config = config or {}
-  config.focus_id = ctx.method
-  if not (result and result.contents) then
-    return
-  end
-  local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
-  markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
-  if vim.tbl_isempty(markdown_lines) then
-    return
-  end
-  return vim.lsp.util.open_floating_preview(markdown_lines, 'markdown', config)
+    config = config or {}
+    config.focus_id = ctx.method
+    if not (result and result.contents) then
+        return
+    end
+    local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+    markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
+    if vim.tbl_isempty(markdown_lines) then
+        return
+    end
+    return vim.lsp.util.open_floating_preview(markdown_lines, 'markdown', config)
 end
 
 local cmp_config = lsp.defaults.cmp_config(astro_settings)
