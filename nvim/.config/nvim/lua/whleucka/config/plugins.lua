@@ -45,16 +45,19 @@ return {
 
 
     -- Tpope
-    { "tpope/vim-surround",
+    {
+        "tpope/vim-surround",
         event = "CursorHold",
     },
-    { 'tpope/vim-commentary',
+    {
+        'tpope/vim-commentary',
         event = "CursorHold",
     },
 
     -- Telescope (pickers)
     {
-        'nvim-telescope/telescope.nvim', version = '0.1.0',
+        'nvim-telescope/telescope.nvim',
+        version = '0.1.0',
         event = "CursorHold",
         dependencies = {
             { 'nvim-lua/plenary.nvim' },
@@ -125,10 +128,12 @@ return {
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
             { 'nvim-lua/lsp_extensions.nvim' },
-            { 'ray-x/lsp_signature.nvim',
-            config = function()
-                require("lsp_signature").setup {}
-            end },
+            {
+                'ray-x/lsp_signature.nvim',
+                config = function()
+                    require("lsp_signature").setup {}
+                end
+            },
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
@@ -142,7 +147,16 @@ return {
             { 'rafamadriz/friendly-snippets' },
 
             -- VScode-like pictograms
-            { 'onsails/lspkind.nvim' }
+            { 'onsails/lspkind.nvim' },
+
+            -- Rust
+            {
+                'simrat39/rust-tools.nvim',
+                config = function()
+                    require("whleucka.config.rust-tools")
+                end
+            },
+
         }
     },
 
@@ -158,7 +172,7 @@ return {
             "mfussenegger/nvim-dap-python",
             "nvim-telescope/telescope-dap.nvim",
             "mfussenegger/nvim-dap-python",
-            { "leoluz/nvim-dap-go", module = "dap-go" },
+            { "leoluz/nvim-dap-go",                module = "dap-go" },
             { "jbyuki/one-small-step-for-vimkind", module = "osv" },
         },
         config = function()
@@ -193,7 +207,8 @@ return {
 
     -- Terminal
     {
-        "akinsho/toggleterm.nvim", version = 'v2.*',
+        "akinsho/toggleterm.nvim",
+        version = 'v2.*',
         event = "CursorHold",
         config = function()
             require("toggleterm").setup()
